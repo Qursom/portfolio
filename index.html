@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qursom Saqlain — AI Full Stack Engineer</title>
+<title>Qursom Saqlain — Senior Full Stack Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Cabinet+Grotesk:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -23,7 +23,7 @@ a{cursor:none;}
 .cursor{position:fixed;z-index:9999;width:10px;height:10px;background:var(--pop);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply;}
 .cursor-ring{position:fixed;z-index:9998;width:36px;height:36px;border:1.5px solid var(--ink);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:multiply;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule2);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule2);box-shadow:0 1px 0 rgba(0,0,0,.04),0 12px 40px rgba(0,0,0,.04);}
 .nav-logo{font-family:var(--font-serif);font-size:20px;font-weight:500;color:var(--ink);}
 .nav-logo em{font-style:italic;color:var(--pop);}
 .nav-links{display:flex;gap:3rem;}
@@ -90,12 +90,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 5rem;display:
 .btn-ghost:hover{border-color:var(--ink);}
 
 .value-section{padding:3.5rem 5rem 4rem;background:var(--white);border-bottom:1px solid var(--rule2);}
-.value-section p{max-width:900px;font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:1.25rem;}
-.value-section p:last-child{margin-bottom:0;}
+.value-section-inner{max-width:920px;display:grid;gap:1.25rem 3rem;}
+@media(min-width:880px){.value-section-inner{grid-template-columns:1fr 1fr;align-items:start;}}
+.value-section p{font-size:1.05rem;color:var(--muted);line-height:1.9;margin:0;}
+.value-section p.value-lead{font-size:1.12rem;color:var(--ink2);font-weight:500;line-height:1.75;}
 .value-section strong{color:var(--ink);font-weight:600;}
 @media(max-width:960px){.value-section{padding:2.5rem 1.5rem 3rem;}}
 
-.hero-panel{background:var(--white);border:1px solid var(--rule);border-radius:24px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;}
+.hero-role{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ink2);margin:-1rem 0 1.75rem;max-width:36rem;line-height:1.5;}
+.hero-role span{color:var(--muted);font-weight:500;}
+.hero-desc--tight{margin-top:-1rem;}
+.hero-panel{background:var(--white);border:1px solid var(--rule);border-radius:24px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;box-shadow:0 20px 48px rgba(0,0,0,.06);}
 .panel-stat{padding:1.25rem 1.5rem;background:var(--cream);border-radius:14px;}
 .panel-stat-num{font-family:var(--font-serif);font-size:2.8rem;font-weight:400;line-height:1;color:var(--ink);letter-spacing:-2px;}
 .panel-stat-num em{font-style:italic;color:var(--pop);}
@@ -121,6 +126,9 @@ section{padding:7rem 5rem;}
 
 .builds-section{background:var(--cream);}
 .builds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
+.builds-grid--quad{grid-template-columns:repeat(4,1fr);}
+@media(max-width:1200px){.builds-grid--quad{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.builds-grid--quad{grid-template-columns:1fr;}}
 .build-card{background:var(--white);padding:2.5rem;transition:background .25s;}
 .build-card:hover{background:var(--ink);}
 .build-card:hover .build-num{color:rgba(255,255,255,.1);}
@@ -133,6 +141,9 @@ section{padding:7rem 5rem;}
 .build-text{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;transition:color .25s;}
 .build-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .tag{font-size:11px;font-family:var(--font-mono);background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:3px 8px;color:var(--muted);transition:all .25s;}
+.build-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--ink);opacity:.7;transition:opacity .2s,color .25s;}
+.build-card:hover .build-card-link{color:rgba(255,255,255,.9);opacity:1;}
+.build-card-link:hover{opacity:1;}
 
 .projects-section{background:var(--white);}
 .project-list{margin-top:4rem;}
@@ -185,7 +196,25 @@ section{padding:7rem 5rem;}
 .trust-text{font-size:14px;color:var(--muted);line-height:1.8;}
 .trust-proof{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule2);font-size:12px;font-weight:700;color:var(--pop2);letter-spacing:.05em;text-transform:uppercase;}
 
+.social-proof-section{background:var(--ink);padding:4rem 5rem;}
+.social-proof-section .s-label{color:rgba(255,255,255,.35);}
+.social-proof-section .s-label::after{background:rgba(255,255,255,.1);}
+.social-proof-head{max-width:36rem;}
+.social-proof-head .social-proof-kicker{font-size:13px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem;}
+.social-proof-head h2{font-family:var(--font-serif);font-size:clamp(1.5rem,2.5vw,1.85rem);font-weight:400;color:rgba(255,255,255,.92);line-height:1.2;letter-spacing:-.02em;margin:0 0 2rem;}
+.social-proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:0;}
+.social-proof-card:only-child{grid-column:1/-1;max-width:42rem;justify-self:center;width:100%;}
+.social-proof-card{background:linear-gradient(145deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.03) 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:2rem 2rem 2rem 1.75rem;position:relative;box-shadow:0 20px 48px rgba(0,0,0,.2);}
+.social-proof-card::before{content:'';position:absolute;left:0;top:1.25rem;bottom:1.25rem;width:3px;border-radius:2px;background:linear-gradient(180deg,var(--pop),var(--pop2));opacity:.9;}
+.social-proof-quote{font-size:1.05rem;color:rgba(255,255,255,.84);line-height:1.75;font-style:italic;margin:0 0 1.35rem;padding-left:.5rem;text-wrap:balance;}
+.social-proof-name{font-size:13px;font-weight:600;color:var(--white);padding-left:.5rem;}
+.social-proof-meta{font-size:12px;color:rgba(255,255,255,.42);margin-top:4px;padding-left:.5rem;}
+
 .stack-section{background:var(--white);}
+.stack-section .s-label,.exp-section .s-label{justify-content:center;}
+.stack-section .s-label::after,.exp-section .s-label::after{display:none;}
+.stack-section .s-title,.exp-section .s-title{text-align:center;margin-left:auto;margin-right:auto;}
+.stack-section .s-sub,.exp-section .s-sub{text-align:center;margin-left:auto;margin-right:auto;}
 .stack-group-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:2.5rem;margin-bottom:.75rem;}
 .stack-row{display:flex;flex-wrap:wrap;gap:10px;}
 .stack-pill{font-size:13px;font-family:var(--font-mono);border:1px solid var(--rule);border-radius:100px;padding:6px 16px;color:var(--muted);transition:all .2s;}
@@ -194,7 +223,10 @@ section{padding:7rem 5rem;}
 .stack-pill.ai:hover{background:#ea580c;color:white;border-color:#ea580c;}
 
 .exp-section{background:var(--cream);}
-.exp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
+.exp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
+@media(max-width:1200px){.exp-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:720px){.exp-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.exp-grid{grid-template-columns:1fr;}}
 .exp-card{background:var(--white);padding:2rem 1.75rem;transition:background .25s;}
 .exp-card:hover{background:var(--ink);}
 .exp-card:hover .exp-company{color:var(--white);}
@@ -228,6 +260,8 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
+a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:focus-visible,.btn-outline-white:focus-visible,.nav-cta:focus-visible,.build-card-link:focus-visible{outline:2px solid var(--pop);outline-offset:3px;}
+.process-section a:focus-visible,.cta-section a:focus-visible,.social-proof-section a:focus-visible{outline-color:var(--white);}
 
 @media(max-width:960px){
   nav{padding:1rem 1.5rem;}
@@ -235,7 +269,8 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
   section{padding:4rem 1.5rem;}
   .hero{grid-template-columns:1fr;padding:8rem 1.5rem 3rem;}
   .hero-panel{display:none;}
-  .builds-grid,.trust-grid,.process-grid{grid-template-columns:1fr;}
+  .builds-grid,.trust-grid,.process-grid,.social-proof-grid{grid-template-columns:1fr;}
+  .social-proof-section{padding:4rem 1.5rem;}
   .project-item{grid-template-columns:40px 1fr auto;gap:1rem;}
   .cta-section{padding:5rem 1.5rem;}
   footer{padding:1.5rem;flex-direction:column;text-align:center;}
@@ -252,6 +287,7 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
     <a href="#builds">Services</a>
     <a href="#projects">Work</a>
     <a href="#process">Process</a>
+    <a href="#social-proof">Clients</a>
     <a href="#stack">Stack</a>
     <a href="#experience">Experience</a>
   </div>
@@ -261,9 +297,10 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 <section class="hero">
   <div>
     <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Available for new projects</div>
+    <p class="hero-role">Senior Full Stack Engineer <span>·</span> AI systems, platforms &amp; distributed backends</p>
     <h1>I build scalable software that drives<br>real business <em>outcomes.</em></h1>
-    <p class="hero-desc">Senior Full Stack Engineer with 5+ years delivering production systems across <strong>FinTech</strong>, <strong>GIS</strong>, and <strong>AI-powered products</strong>.</p>
-    <p class="hero-desc" style="margin-top:-1.5rem;">I help startups and enterprises turn complex ideas into fast, reliable, and scalable software — from architecture to deployment.</p>
+    <p class="hero-desc hero-desc--tight">5+ years shipping production systems across <strong>FinTech</strong>, <strong>GIS</strong>, and <strong>AI-led products</strong> — owning architecture through deployment.</p>
+    <p class="hero-desc">I partner with startups and enterprises to turn complex requirements into <strong>fast, observable, maintainable</strong> software your team can run for years.</p>
     <div class="hero-actions">
       <a href="mailto:qursom@outlook.com" class="btn-black">Book a Strategy Call →</a>
       <a href="#projects" class="btn-ghost">View My Work</a>
@@ -292,8 +329,10 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 </section>
 
 <section class="value-section" aria-label="Value statement">
-  <p>I don't just write code — I design systems that <strong>scale, perform, and generate value</strong>.</p>
-  <p>From AI integrations to high-traffic platforms, I build software that works in production — not just in demos.</p>
+  <div class="value-section-inner">
+    <p class="value-lead">I don't just implement features — I design systems that <strong>scale, stay observable in production</strong>, and <strong>earn trust</strong> from engineering and the business.</p>
+    <p>From AI integrations to high-traffic platforms, I prioritize trade-offs explicitly, document decisions that matter, and ship software that holds up after launch — not just in demos.</p>
+  </div>
 </section>
 
 <div class="marquee-wrap">
@@ -319,9 +358,9 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 
 <section id="builds" class="builds-section">
   <div class="s-label">What I Build</div>
-  <h2 class="s-title">Services &amp;<br><em>capabilities.</em></h2>
+  <h2 class="s-title">Services &amp; capabilities.</h2>
   <p class="s-sub">End-to-end engineering — from architecture through deployment and scaling.</p>
-  <div class="builds-grid reveal" style="grid-template-columns:repeat(4,1fr);">
+  <div class="builds-grid builds-grid--quad reveal">
     <div class="build-card">
       <span class="build-icon">⚡</span>
       <div class="build-num">01</div>
@@ -370,6 +409,7 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
       <div class="build-title">Mentorship &amp; Consulting</div>
       <p class="build-text">1-on-1 guidance for developers and teams — focused on real-world engineering, system design, and production practices.</p>
       <div class="build-tags"><span class="tag">Mentorship</span><span class="tag">System Design</span><span class="tag">Code Review</span></div>
+      <a href="https://www.codementor.io/@qursom" target="_blank" rel="noopener noreferrer" class="build-card-link">Tutoring on Codementor ↗</a>
     </div>
     <div class="build-card">
       <span class="build-icon">🐛</span>
@@ -383,7 +423,7 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 
 <section id="projects" class="projects-section">
   <div class="s-label">Selected Projects</div>
-  <h2 class="s-title">Work that’s<br><em>live in production.</em></h2>
+  <h2 class="s-title">Work that’s live in production.</h2>
   <p class="s-sub">Systems built for real users, real data, and real business outcomes.</p>
   <div class="project-list">
 
@@ -489,7 +529,7 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 
 <section id="process" class="process-section">
   <div class="s-label">How I Work</div>
-  <h2 class="s-title" style="color:white;">A process built for<br><em>clarity and delivery.</em></h2>
+  <h2 class="s-title">A process built for clarity and delivery.</h2>
   <p class="s-sub">Discovery through scale — with milestones you can track.</p>
   <div class="process-grid reveal">
     <div class="process-step">
@@ -517,7 +557,7 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 
 <section class="trust-section">
   <div class="s-label">Why Clients Choose Me</div>
-  <h2 class="s-title">Partnership, not just<br><em>output.</em></h2>
+  <h2 class="s-title">Partnership, not just output.</h2>
   <p class="s-sub">Clear scope, production-grade systems, and communication you can count on.</p>
   <div class="trust-grid">
     <div class="trust-card reveal">
@@ -553,9 +593,26 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
   </div>
 </section>
 
+<section id="social-proof" class="social-proof-section" aria-label="Client testimonials">
+  <div class="s-label">Social proof</div>
+  <div class="social-proof-head">
+    <p class="social-proof-kicker">What leaders say</p>
+    <h2>Trusted on high-stakes delivery.</h2>
+  </div>
+  <div class="social-proof-grid">
+    <div class="social-proof-card reveal">
+      <p class="social-proof-quote">
+        &ldquo;Qursom delivered a production-ready system ahead of schedule. Her attention to architecture and communication made the whole project smooth.&rdquo;
+      </p>
+      <div class="social-proof-name">Suniya Shahid, CEO</div>
+      <div class="social-proof-meta">Techvention · via LinkedIn</div>
+    </div>
+  </div>
+</section>
+
 <section id="stack" class="stack-section">
   <div class="s-label">Tech Stack</div>
-  <h2 class="s-title">Tools I ship<br><em>with every day.</em></h2>
+  <h2 class="s-title">Tools I ship with every day.</h2>
   <p class="s-sub">Stack aligned to production needs — performance, maintainability, and scale.</p>
   <div class="stack-group-header">Backend</div>
   <div class="stack-row reveal"><span class="stack-pill">Node.js</span><span class="stack-pill">NestJS</span><span class="stack-pill">Express</span><span class="stack-pill">Java Spring Boot</span><span class="stack-pill">Microservices</span></div>
@@ -571,8 +628,8 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 
 <section id="experience" class="exp-section">
   <div class="s-label">Experience</div>
-  <h2 class="s-title">Roles that shaped<br><em>how I build.</em></h2>
-  <p class="s-sub">5+ years building production-grade software across enterprise companies and global clients.</p>
+  <h2 class="s-title">Roles that shaped how I build.</h2>
+  <p class="s-sub">Senior IC &amp; lead-contributor track — production-grade delivery across enterprises and global clients.</p>
   <div class="exp-grid reveal">
     <div class="exp-card">
       <div class="exp-dot"></div>
@@ -604,6 +661,12 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
       <div class="exp-role">Software Developer</div>
       <div class="exp-period">2017 — 2018</div>
     </div>
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div class="exp-company">NUST — College of EME</div>
+      <div class="exp-role">BE Computer Engineering</div>
+      <div class="exp-period">2013 — 2017 · Gold Medalist</div>
+    </div>
   </div>
 </section>
 
@@ -621,10 +684,11 @@ footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255
 </section>
 
 <footer>
-  <div class="footer-left">© 2026 Qursom Saqlain · AI Full Stack Engineer</div>
+  <div class="footer-left">© 2026 Qursom Saqlain · Senior Full Stack Engineer</div>
   <div class="footer-right">
-    <a href="https://github.com/Qursom" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/qursom" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Qursom" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/qursom" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://www.codementor.io/@qursom" target="_blank" rel="noopener noreferrer">Codementor</a>
     <a href="mailto:qursom@outlook.com">Email</a>
   </div>
 </footer>
