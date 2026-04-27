@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qursom Saqlain — AI Full Stack Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Cabinet+Grotesk:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0d0d0d;--ink2:#1a1a1a;--muted:#6b6b6b;--muted2:#9b9b9b;
+  --rule:#e5e5e5;--rule2:#f0f0f0;--cream:#fafaf8;--white:#ffffff;
+  --pop:#ff4d00;--pop2:#7c3aed;--gold:#c9a84c;--green:#16a34a;
+  --font-serif:'Fraunces',serif;--font-sans:'Cabinet Grotesk',sans-serif;--font-mono:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.65;overflow-x:hidden;cursor:none;}
+a{cursor:none;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--ink);}
+
+.cursor{position:fixed;z-index:9999;width:10px;height:10px;background:var(--pop);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply;}
+.cursor-ring{position:fixed;z-index:9998;width:36px;height:36px;border:1.5px solid var(--ink);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:multiply;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule2);}
+.nav-logo{font-family:var(--font-serif);font-size:20px;font-weight:500;color:var(--ink);}
+.nav-logo em{font-style:italic;color:var(--pop);}
+.nav-links{display:flex;gap:3rem;}
+.nav-links a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;background:var(--ink);color:var(--white);text-decoration:none;padding:.6rem 1.4rem;border-radius:100px;transition:background .2s,transform .2s;}
+.nav-cta:hover{background:var(--pop);transform:scale(1.03);}
+
+.hero{min-height:100vh;padding:10rem 5rem 5rem;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center;background:var(--cream);position:relative;overflow:hidden;}
+.hero::before{content:'QS';position:absolute;right:-1rem;bottom:-5rem;font-family:var(--font-serif);font-size:28vw;font-weight:300;color:rgba(0,0,0,0.04);line-height:1;pointer-events:none;user-select:none;}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;}
+.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(22,163,74,.2);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(22,163,74,.2)}50%{box-shadow:0 0 0 6px rgba(22,163,74,.1)}}
+/* Display headlines — professional editorial weight, spacing & rendering */
+.headline-hero,
+.hero h1,
+.s-title,
+.process-section .s-title{
+  font-family:var(--font-serif);
+  color:var(--ink);
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+.hero h1,
+.headline-hero{
+  font-size:clamp(2.75rem,5.2vw,4.75rem);
+  font-weight:400;
+  line-height:1.06;
+  letter-spacing:-0.035em;
+  max-width:12em;
+  margin-bottom:2rem;
+  text-wrap:balance;
+}
+.hero h1 em,
+.headline-hero em{font-style:italic;font-weight:500;color:var(--pop);letter-spacing:-0.04em;}
+.s-title,
+.process-section .s-title{
+  font-size:clamp(2.15rem,3.6vw,3.5rem);
+  font-weight:400;
+  line-height:1.12;
+  letter-spacing:-0.03em;
+  max-width:16em;
+  text-wrap:balance;
+}
+.s-title em,.process-section .s-title em{font-style:italic;font-weight:500;}
+.cta-title{
+  font-family:var(--font-serif);
+  color:var(--white);
+  font-size:clamp(2.5rem,6.2vw,5.5rem);
+  font-weight:400;
+  line-height:1.05;
+  letter-spacing:-0.04em;
+  text-wrap:balance;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+.cta-title em{font-style:italic;font-weight:500;color:var(--pop);}
+.hero-desc{font-size:1.05rem;color:var(--muted);max-width:480px;line-height:1.9;margin-bottom:3rem;}
+.hero-desc strong{color:var(--ink);font-weight:600;}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.btn-black{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--white);text-decoration:none;padding:1rem 2rem;border-radius:100px;font-weight:700;font-size:14px;transition:all .25s;}
+.btn-black:hover{background:var(--pop);transform:scale(1.03);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);text-decoration:none;padding:1rem 2rem;border-radius:100px;font-weight:600;font-size:14px;border:1.5px solid var(--rule);transition:all .25s;}
+.btn-ghost:hover{border-color:var(--ink);}
+
+.value-section{padding:3.5rem 5rem 4rem;background:var(--white);border-bottom:1px solid var(--rule2);}
+.value-section p{max-width:900px;font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:1.25rem;}
+.value-section p:last-child{margin-bottom:0;}
+.value-section strong{color:var(--ink);font-weight:600;}
+@media(max-width:960px){.value-section{padding:2.5rem 1.5rem 3rem;}}
+
+.hero-panel{background:var(--white);border:1px solid var(--rule);border-radius:24px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;}
+.panel-stat{padding:1.25rem 1.5rem;background:var(--cream);border-radius:14px;}
+.panel-stat-num{font-family:var(--font-serif);font-size:2.8rem;font-weight:400;line-height:1;color:var(--ink);letter-spacing:-2px;}
+.panel-stat-num em{font-style:italic;color:var(--pop);}
+.panel-stat-label{font-size:13px;color:var(--muted);margin-top:4px;}
+.panel-available{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--ink);border-radius:14px;color:var(--white);}
+.panel-available-text{font-size:13px;font-weight:600;}
+.panel-available-badge{font-size:11px;font-weight:700;background:var(--green);color:var(--white);padding:3px 10px;border-radius:100px;letter-spacing:.05em;}
+.panel-clients{padding:1rem 1.5rem;border:1px solid var(--rule);border-radius:14px;}
+.panel-clients-label{font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;}
+.panel-client-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.client-tag{font-size:12px;font-weight:600;background:var(--cream);border:1px solid var(--rule);border-radius:100px;padding:4px 12px;color:var(--ink);}
+
+.marquee-wrap{background:var(--ink);padding:1rem 0;overflow:hidden;display:flex;}
+.marquee-track{display:flex;gap:3rem;animation:marquee 24s linear infinite;white-space:nowrap;}
+.marquee-item{font-family:var(--font-serif);font-size:14px;font-weight:300;font-style:italic;color:rgba(255,255,255,.45);flex-shrink:0;}
+.marquee-item strong{color:var(--white);font-style:normal;font-weight:700;font-family:var(--font-sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:7rem 5rem;}
+.s-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;}
+.s-label::after{content:'';flex:1;height:1px;background:var(--rule);}
+.s-sub{font-size:1rem;color:var(--muted);max-width:500px;line-height:1.85;margin-top:1rem;}
+
+.builds-section{background:var(--cream);}
+.builds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
+.build-card{background:var(--white);padding:2.5rem;transition:background .25s;}
+.build-card:hover{background:var(--ink);}
+.build-card:hover .build-num{color:rgba(255,255,255,.1);}
+.build-card:hover .build-title{color:var(--white);}
+.build-card:hover .build-text{color:rgba(255,255,255,.55);}
+.build-card:hover .tag{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.6);}
+.build-num{font-family:var(--font-serif);font-size:3rem;font-weight:300;color:var(--rule);line-height:1;margin-bottom:1.25rem;transition:color .25s;}
+.build-icon{font-size:2rem;margin-bottom:.75rem;display:block;}
+.build-title{font-weight:700;font-size:1.05rem;margin-bottom:.6rem;transition:color .25s;}
+.build-text{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;transition:color .25s;}
+.build-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-size:11px;font-family:var(--font-mono);background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:3px 8px;color:var(--muted);transition:all .25s;}
+
+.projects-section{background:var(--white);}
+.project-list{margin-top:4rem;}
+.project-item{display:grid;grid-template-columns:80px 1fr auto;gap:2.5rem;align-items:start;padding:2.5rem 1rem;border-bottom:1px solid var(--rule2);transition:all .2s;text-decoration:none;color:inherit;border-radius:0;}
+.project-item:first-child{border-top:1px solid var(--rule2);}
+.project-item:hover{background:var(--cream);border-radius:14px;border-color:transparent;padding-left:2rem;padding-right:2rem;}
+.proj-num{font-family:var(--font-serif);font-size:1rem;font-weight:300;color:var(--muted2);padding-top:5px;}
+.proj-header{display:flex;align-items:center;gap:10px;margin-bottom:.5rem;flex-wrap:wrap;}
+.proj-title{font-weight:700;font-size:1.2rem;}
+.proj-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:.04em;}
+.b-live{background:#dcfce7;color:#16a34a;}
+.b-os{background:#ede9fe;color:#7c3aed;}
+.b-award{background:#fef9c3;color:#ca8a04;}
+.b-ai{background:#ffedd5;color:#ea580c;}
+.b-ent{background:#f1f5f9;color:#475569;}
+.proj-desc{font-size:14px;color:var(--muted);line-height:1.85;max-width:600px;margin-bottom:1rem;}
+.proj-impact{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.impact-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.impact-item strong{color:var(--ink);font-weight:700;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:.75rem;}
+.proj-arrow{font-size:1.4rem;color:var(--muted2);padding-top:5px;transition:all .2s;flex-shrink:0;}
+.project-item:hover .proj-arrow{color:var(--pop);transform:translate(4px,-4px);}
+.proj-block-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin:1rem 0 .35rem;}
+.proj-bullet-list{list-style:none;padding:0;margin:0 0 1rem;font-size:13px;color:var(--muted);line-height:1.8;}
+.proj-bullet-list li{padding-left:1rem;position:relative;margin-bottom:4px;}
+.proj-bullet-list li::before{content:'—';position:absolute;left:0;color:var(--muted2);}
+.proj-tech-line{font-size:12px;font-family:var(--font-mono);color:var(--muted);margin-top:.5rem;}
+.proj-tech-line strong{color:var(--ink);font-weight:700;}
+
+.process-section{background:var(--ink);color:var(--white);}
+.process-section .s-title{color:var(--white);}
+.process-section .s-title em{color:var(--pop);}
+.process-section .s-sub{color:rgba(255,255,255,.5);}
+.process-section .s-label{color:rgba(255,255,255,.35);}
+.process-section .s-label::after{background:rgba(255,255,255,.1);}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4rem;border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;}
+.process-step{padding:2.5rem;border-right:1px solid rgba(255,255,255,.08);transition:background .25s;}
+.process-step:last-child{border-right:none;}
+.process-step:hover{background:rgba(255,255,255,.04);}
+.step-num{font-family:var(--font-serif);font-size:3rem;font-weight:300;color:rgba(255,255,255,.1);line-height:1;margin-bottom:1.5rem;}
+.step-title{font-weight:700;font-size:1rem;margin-bottom:.6rem;}
+.step-text{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;}
+
+.trust-section{background:var(--cream);}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;}
+.trust-card{background:var(--white);border:1px solid var(--rule);border-radius:20px;padding:2rem;transition:transform .25s,box-shadow .25s;}
+.trust-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
+.trust-icon{font-size:2rem;margin-bottom:1rem;display:block;}
+.trust-title{font-weight:700;font-size:1rem;margin-bottom:.6rem;}
+.trust-text{font-size:14px;color:var(--muted);line-height:1.8;}
+.trust-proof{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule2);font-size:12px;font-weight:700;color:var(--pop2);letter-spacing:.05em;text-transform:uppercase;}
+
+.stack-section{background:var(--white);}
+.stack-group-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:2.5rem;margin-bottom:.75rem;}
+.stack-row{display:flex;flex-wrap:wrap;gap:10px;}
+.stack-pill{font-size:13px;font-family:var(--font-mono);border:1px solid var(--rule);border-radius:100px;padding:6px 16px;color:var(--muted);transition:all .2s;}
+.stack-pill:hover{border-color:var(--ink);color:var(--ink);}
+.stack-pill.ai{border-color:#fb923c;color:#ea580c;background:#fff7ed;}
+.stack-pill.ai:hover{background:#ea580c;color:white;border-color:#ea580c;}
+
+.exp-section{background:var(--cream);}
+.exp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
+.exp-card{background:var(--white);padding:2rem 1.75rem;transition:background .25s;}
+.exp-card:hover{background:var(--ink);}
+.exp-card:hover .exp-company{color:var(--white);}
+.exp-card:hover .exp-role{color:rgba(255,255,255,.55);}
+.exp-card:hover .exp-period{color:rgba(255,255,255,.35);}
+.exp-card:hover .exp-dot{background:var(--pop);}
+.exp-dot{width:8px;height:8px;border-radius:50%;background:var(--ink);margin-bottom:1.25rem;transition:background .25s;}
+.exp-company{font-weight:700;font-size:1rem;margin-bottom:.35rem;transition:color .25s;}
+.exp-role{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:.5rem;transition:color .25s;}
+.exp-period{font-size:12px;font-family:var(--font-mono);color:var(--muted2);transition:color .25s;}
+.cta-section{background:var(--ink);padding:8rem 5rem;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:"LET'S TALK";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-serif);font-size:20vw;font-weight:300;color:rgba(255,255,255,.03);white-space:nowrap;pointer-events:none;}
+.cta-section .s-label{color:rgba(255,255,255,.35);justify-content:center;}
+.cta-section .s-label::after{display:none;}
+.cta-title{margin:1.5rem 0 2rem;}
+.cta-sub{font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:3rem;}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-white{display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--ink);text-decoration:none;padding:1rem 2.5rem;border-radius:100px;font-weight:700;font-size:15px;transition:all .25s;}
+.btn-white:hover{background:var(--pop);color:var(--white);transform:scale(1.03);}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.65);text-decoration:none;padding:1rem 2.5rem;border-radius:100px;font-weight:600;font-size:15px;border:1.5px solid rgba(255,255,255,.2);transition:all .25s;}
+.btn-outline-white:hover{border-color:var(--white);color:var(--white);}
+.cta-email{font-size:13px;color:rgba(255,255,255,.3);margin-top:2rem;font-family:var(--font-mono);}
+.cta-email a{color:rgba(255,255,255,.55);text-decoration:none;}
+.cta-email a:hover{color:var(--white);}
+
+footer{background:var(--ink);padding:2rem 5rem;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-left{font-size:13px;color:rgba(255,255,255,.3);}
+.footer-right{display:flex;gap:2rem;}
+.footer-right a{font-size:13px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
+.footer-right a:hover{color:rgba(255,255,255,.8);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  section{padding:4rem 1.5rem;}
+  .hero{grid-template-columns:1fr;padding:8rem 1.5rem 3rem;}
+  .hero-panel{display:none;}
+  .builds-grid,.trust-grid,.process-grid{grid-template-columns:1fr;}
+  .project-item{grid-template-columns:40px 1fr auto;gap:1rem;}
+  .cta-section{padding:5rem 1.5rem;}
+  footer{padding:1.5rem;flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-logo">Qursom <em>Saqlain</em></div>
+  <div class="nav-links">
+    <a href="#builds">Services</a>
+    <a href="#projects">Work</a>
+    <a href="#process">Process</a>
+    <a href="#stack">Stack</a>
+    <a href="#experience">Experience</a>
+  </div>
+  <a href="mailto:qursom@outlook.com" class="nav-cta">Book a Strategy Call →</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Available for new projects</div>
+    <h1>I build scalable software that drives<br>real business <em>outcomes.</em></h1>
+    <p class="hero-desc">Senior Full Stack Engineer with 5+ years delivering production systems across <strong>FinTech</strong>, <strong>GIS</strong>, and <strong>AI-powered products</strong>.</p>
+    <p class="hero-desc" style="margin-top:-1.5rem;">I help startups and enterprises turn complex ideas into fast, reliable, and scalable software — from architecture to deployment.</p>
+    <div class="hero-actions">
+      <a href="mailto:qursom@outlook.com" class="btn-black">Book a Strategy Call →</a>
+      <a href="#projects" class="btn-ghost">View My Work</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="panel-stat">
+      <div class="panel-stat-num">15<em>+</em></div>
+      <div class="panel-stat-label">Production apps shipped across 5 industries</div>
+    </div>
+    <div class="panel-stat">
+      <div class="panel-stat-num">5<em>yr</em></div>
+      <div class="panel-stat-label">Enterprise-scale delivery — FinTech, Real Estate, GIS</div>
+    </div>
+    <div class="panel-available">
+      <div class="panel-available-text">Open to Remote Work</div>
+      <div class="panel-available-badge">AVAILABLE</div>
+    </div>
+    <div class="panel-clients">
+      <div class="panel-clients-label">Delivered For</div>
+      <div class="panel-client-tags">
+        <span class="client-tag">LMKR</span><span class="client-tag">Ecofin</span><span class="client-tag">GEPCO</span><span class="client-tag">Convo.com</span><span class="client-tag">Gridizen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="value-section" aria-label="Value statement">
+  <p>I don't just write code — I design systems that <strong>scale, perform, and generate value</strong>.</p>
+  <p>From AI integrations to high-traffic platforms, I build software that works in production — not just in demos.</p>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item"><strong>Full Stack Development</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>AI Integration</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Scalable APIs</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Cloud Deployment</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>RAG Architecture</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>UI/UX Engineering</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Microservices</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Remote-Ready</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Full Stack Development</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>AI Integration</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Scalable APIs</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Cloud Deployment</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>RAG Architecture</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>UI/UX Engineering</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Microservices</strong></span><span class="marquee-item">✦</span>
+    <span class="marquee-item"><strong>Remote-Ready</strong></span><span class="marquee-item">✦</span>
+  </div>
+</div>
+
+<section id="builds" class="builds-section">
+  <div class="s-label">What I Build</div>
+  <h2 class="s-title">Services &amp;<br><em>capabilities.</em></h2>
+  <p class="s-sub">End-to-end engineering — from architecture through deployment and scaling.</p>
+  <div class="builds-grid reveal" style="grid-template-columns:repeat(4,1fr);">
+    <div class="build-card">
+      <span class="build-icon">⚡</span>
+      <div class="build-num">01</div>
+      <div class="build-title">Full Stack Web Applications</div>
+      <p class="build-text">High-performance applications built with modern frameworks — optimized for speed, scalability, and long-term maintainability.</p>
+      <div class="build-tags"><span class="tag">Next.js</span><span class="tag">Angular</span><span class="tag">React</span><span class="tag">TypeScript</span></div>
+    </div>
+    <div class="build-card">
+      <span class="build-icon">🤖</span>
+      <div class="build-num">02</div>
+      <div class="build-title">AI-Powered Products</div>
+      <p class="build-text">Production-ready AI systems using RAG pipelines, vector search, and LLM integrations — built around your real business data.</p>
+      <div class="build-tags"><span class="tag">RAG</span><span class="tag">Pinecone</span><span class="tag">LLM</span><span class="tag">Vector Search</span></div>
+    </div>
+    <div class="build-card">
+      <span class="build-icon">🏗️</span>
+      <div class="build-num">03</div>
+      <div class="build-title">Scalable Backend Systems</div>
+      <p class="build-text">Robust APIs and microservices designed to handle high traffic, complex workflows, and real-world usage without breaking.</p>
+      <div class="build-tags"><span class="tag">Microservices</span><span class="tag">APIs</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span></div>
+    </div>
+    <div class="build-card">
+      <span class="build-icon">🛒</span>
+      <div class="build-num">04</div>
+      <div class="build-title">Platforms &amp; Marketplaces</div>
+      <p class="build-text">End-to-end systems including payments, authentication, dashboards, and integrations — ready for real users and revenue.</p>
+      <div class="build-tags"><span class="tag">Stripe</span><span class="tag">Auth</span><span class="tag">Payments</span><span class="tag">Dashboards</span></div>
+    </div>
+    <div class="build-card">
+      <span class="build-icon">☁️</span>
+      <div class="build-num">05</div>
+      <div class="build-title">Cloud &amp; DevOps</div>
+      <p class="build-text">Automated deployments, CI/CD pipelines, and cloud infrastructure that keep your product fast, secure, and always available.</p>
+      <div class="build-tags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">CI/CD</span></div>
+    </div>
+    <div class="build-card">
+      <span class="build-icon">🗺️</span>
+      <div class="build-num">06</div>
+      <div class="build-title">GIS &amp; FinTech Systems</div>
+      <p class="build-text">Specialized experience building geospatial platforms and financial systems with high complexity and strict reliability requirements.</p>
+      <div class="build-tags"><span class="tag">GIS</span><span class="tag">FinTech</span><span class="tag">Java</span><span class="tag">PostGIS</span></div>
+    </div>
+    <div class="build-card" style="position:relative;">
+      <span class="build-icon">🎓</span>
+      <div class="build-num">07</div>
+      <div class="build-title">Mentorship &amp; Consulting</div>
+      <p class="build-text">1-on-1 guidance for developers and teams — focused on real-world engineering, system design, and production practices.</p>
+      <div class="build-tags"><span class="tag">Mentorship</span><span class="tag">System Design</span><span class="tag">Code Review</span></div>
+    </div>
+    <div class="build-card">
+      <span class="build-icon">🐛</span>
+      <div class="build-num">08</div>
+      <div class="build-title">Debugging &amp; Code Optimization</div>
+      <p class="build-text">Fix performance bottlenecks, unstable systems, and complex bugs — with root-cause solutions, not temporary patches.</p>
+      <div class="build-tags"><span class="tag">Debugging</span><span class="tag">Performance</span><span class="tag">Optimization</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects-section">
+  <div class="s-label">Selected Projects</div>
+  <h2 class="s-title">Work that’s<br><em>live in production.</em></h2>
+  <p class="s-sub">Systems built for real users, real data, and real business outcomes.</p>
+  <div class="project-list">
+
+    <a href="https://github.com/Qursom/AI_Career_copilot" target="_blank" class="project-item reveal">
+      <div class="proj-num">01</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">🚀 AI Career Copilot</span><span class="proj-badge b-ai">AI Product</span><span class="proj-badge b-os">Open Source</span></div>
+        <p class="proj-desc">AI-powered career assistant with resume analysis, job-fit scoring, and personalized recommendations using RAG architecture.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>Full-stack AI system with real data context</li>
+          <li>Modular LLM backend (OpenAI + Gemini)</li>
+          <li>Production-ready architecture (not a prototype)</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> Next.js, NestJS, Pinecone, TypeScript, LLM APIs</p>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a href="https://gridizen.co.uk" target="_blank" class="project-item reveal">
+      <div class="proj-num">02</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">🏢 Gridizen — Real Estate Platform</span><span class="proj-badge b-live">Live</span><span class="proj-badge b-ent">Enterprise</span></div>
+        <p class="proj-desc">Scalable property management platform serving 10,000+ users with payments, listings, and automation workflows.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>10,000+ active users</li>
+          <li>99.8% uptime</li>
+          <li>Integrated Stripe, Google Maps, Zapier</li>
+          <li>Led full architecture and development</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> Angular, Node.js, AWS, Jenkins, MySQL</p>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a href="https://foodtech-app-mean-stack.onrender.com" target="_blank" class="project-item reveal">
+      <div class="proj-num">03</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">🍔 FoodTech AI Marketplace</span><span class="proj-badge b-live">Live</span><span class="proj-badge b-ai">Gemini AI</span><span class="proj-badge b-os">Open Source</span></div>
+        <p class="proj-desc">Food ordering platform with an AI chatbot that reads live menu data and provides intelligent recommendations.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>AI chatbot with real-time context awareness</li>
+          <li>Multi-turn conversation support</li>
+          <li>Live production deployment</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> MEAN Stack, Gemini AI, PayPal, Google Maps</p>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a href="https://gis.gepcoerp.com.pk/gepco/login" target="_blank" rel="noopener noreferrer" class="project-item reveal">
+      <div class="proj-num">04</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">⚡ GEPCO Geospatial Platform</span><span class="proj-badge b-ent">Enterprise · Utility</span></div>
+        <p class="proj-desc">Mission-critical GIS platform for utility infrastructure and grid management.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>Supports 100+ operational locations</li>
+          <li>Real-time geospatial data processing</li>
+          <li>Mobile API integration for field teams</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> Java Spring Boot, PostgreSQL, GIS</p>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <div class="project-item reveal" style="cursor:default;">
+      <div class="proj-num">05</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">💳 JORR FinTech Marketplace</span><span class="proj-badge b-ent">FinTech · B2B2C</span></div>
+        <p class="proj-desc">High-performance fintech platform connecting retailers, banks, and government entities.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>Handles high-volume financial transactions</li>
+          <li>Optimized backend performance with Redis caching</li>
+          <li>Built for scalability and reliability</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> Node.js, PostgreSQL, Redis, Microservices</p>
+      </div>
+      <div class="proj-arrow" style="color:var(--rule);">—</div>
+    </div>
+
+    <a href="https://risetech.ai/portfolio/optha-insights" target="_blank" rel="noopener noreferrer" class="project-item reveal" style="border-bottom:none;">
+      <div class="proj-num">06</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">🏆 Ophthahelp — Eye Diagnostics</span><span class="proj-badge b-award">Gold Medal · NUST</span></div>
+        <p class="proj-desc">Award-winning platform for remote eye diagnostics in underserved communities.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>Gold Medal (Best Final Year Project)</li>
+          <li>Real-world healthcare application</li>
+          <li>Cloud-based image analysis system</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> AWS, MySQL, Mobile + Cloud</p>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+  </div>
+</section>
+
+<section id="process" class="process-section">
+  <div class="s-label">How I Work</div>
+  <h2 class="s-title" style="color:white;">A process built for<br><em>clarity and delivery.</em></h2>
+  <p class="s-sub">Discovery through scale — with milestones you can track.</p>
+  <div class="process-grid reveal">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Discovery</div>
+      <p class="step-text">We define your product goals, requirements, and constraints clearly — no guesswork.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Architecture &amp; Planning</div>
+      <p class="step-text">I design a scalable system and break it into clear, actionable milestones.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Build &amp; Iterate</div>
+      <p class="step-text">Agile development with regular updates, demos, and clean, maintainable code.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Deploy &amp; Scale</div>
+      <p class="step-text">Production deployment with monitoring, support, and scaling strategies.</p>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="s-label">Why Clients Choose Me</div>
+  <h2 class="s-title">Partnership, not just<br><em>output.</em></h2>
+  <p class="s-sub">Clear scope, production-grade systems, and communication you can count on.</p>
+  <div class="trust-grid">
+    <div class="trust-card reveal">
+      <span class="trust-icon">🎯</span>
+      <div class="trust-title">Clear Scope — No Surprises</div>
+      <p class="trust-text">You get exactly what was planned, with no hidden complexity or missed requirements.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">🔒</span>
+      <div class="trust-title">Built for Scale from Day One</div>
+      <p class="trust-text">Production-grade systems with proven reliability and performance.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">💬</span>
+      <div class="trust-title">Transparent Communication</div>
+      <p class="trust-text">Consistent updates, clear timelines, and no confusion during development.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">🤖</span>
+      <div class="trust-title">Real AI Expertise</div>
+      <p class="trust-text">Practical AI implementations with real data — not experimental demos.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">📈</span>
+      <div class="trust-title">Proven Scaling Experience</div>
+      <p class="trust-text">Systems built to handle thousands of users and growing workloads.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="trust-icon">🌍</span>
+      <div class="trust-title">Remote-Ready Execution</div>
+      <p class="trust-text">5+ years working with global teams — reliable, independent delivery.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="stack-section">
+  <div class="s-label">Tech Stack</div>
+  <h2 class="s-title">Tools I ship<br><em>with every day.</em></h2>
+  <p class="s-sub">Stack aligned to production needs — performance, maintainability, and scale.</p>
+  <div class="stack-group-header">Backend</div>
+  <div class="stack-row reveal"><span class="stack-pill">Node.js</span><span class="stack-pill">NestJS</span><span class="stack-pill">Express</span><span class="stack-pill">Java Spring Boot</span><span class="stack-pill">Microservices</span></div>
+  <div class="stack-group-header">Frontend</div>
+  <div class="stack-row reveal"><span class="stack-pill">Next.js</span><span class="stack-pill">Angular</span><span class="stack-pill">React</span><span class="stack-pill">TypeScript</span></div>
+  <div class="stack-group-header">AI &amp; GenAI</div>
+  <div class="stack-row reveal"><span class="stack-pill ai">OpenAI</span><span class="stack-pill ai">Gemini</span><span class="stack-pill ai">RAG</span><span class="stack-pill ai">Pinecone</span><span class="stack-pill ai">Vector Search</span></div>
+  <div class="stack-group-header">DevOps &amp; Cloud</div>
+  <div class="stack-row reveal"><span class="stack-pill">AWS</span><span class="stack-pill">Docker</span><span class="stack-pill">Kubernetes</span><span class="stack-pill">Jenkins</span><span class="stack-pill">CI/CD</span></div>
+  <div class="stack-group-header">Databases</div>
+  <div class="stack-row reveal"><span class="stack-pill">PostgreSQL</span><span class="stack-pill">MongoDB</span><span class="stack-pill">Redis</span><span class="stack-pill">MySQL</span></div>
+</section>
+
+<section id="experience" class="exp-section">
+  <div class="s-label">Experience</div>
+  <h2 class="s-title">Roles that shaped<br><em>how I build.</em></h2>
+  <p class="s-sub">5+ years building production-grade software across enterprise companies and global clients.</p>
+  <div class="exp-grid reveal">
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div class="exp-company">LMKR</div>
+      <div class="exp-role">Senior Full Stack Engineer</div>
+      <div class="exp-period">2022 — Present</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div class="exp-company">Ecofin Technologies</div>
+      <div class="exp-role">Software Engineer</div>
+      <div class="exp-period">2021 — 2022</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div class="exp-company">Upwork</div>
+      <div class="exp-role">Freelance Developer</div>
+      <div class="exp-period">2019 — 2022</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div class="exp-company">Convo.com</div>
+      <div class="exp-role">Junior Engineer</div>
+      <div class="exp-period">2018 — 2019</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div class="exp-company">RISETech NUST</div>
+      <div class="exp-role">Software Developer</div>
+      <div class="exp-period">2017 — 2018</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="s-label">Next Step</div>
+  <h2 class="cta-title">Ready to ship software<br>that <em>scales?</em></h2>
+  <p class="cta-sub">Book a strategy call — we'll align on goals, scope, and how I can help. I typically respond within 24 hours.</p>
+  <div class="cta-actions">
+    <a href="mailto:qursom@outlook.com" class="btn-white">Book a Strategy Call →</a>
+    <a href="#projects" class="btn-outline-white">View My Work</a>
+    <a href="https://www.linkedin.com/in/qursom" target="_blank" class="btn-outline-white">LinkedIn</a>
+    <a href="https://github.com/Qursom" target="_blank" class="btn-outline-white">GitHub</a>
+  </div>
+  <div class="cta-email"><a href="mailto:qursom@outlook.com">qursom@outlook.com</a> · Islamabad, Pakistan · Remote worldwide</div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 Qursom Saqlain · AI Full Stack Engineer</div>
+  <div class="footer-right">
+    <a href="https://github.com/Qursom" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/qursom" target="_blank">LinkedIn</a>
+    <a href="mailto:qursom@outlook.com">Email</a>
+  </div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.width='20px';cursor.style.height='20px';ring.style.width='56px';ring.style.height='56px';});
+  el.addEventListener('mouseleave',()=>{cursor.style.width='10px';cursor.style.height='10px';ring.style.width='36px';ring.style.height='36px';});
+});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--ink)':'';});
+});
+</script>
+</body>
+</html>
