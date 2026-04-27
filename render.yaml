@@ -1,0 +1,9 @@
+# Render: Static Site — https://docs.render.com/docs/static-sites
+# After push: Dashboard → New → Blueprint → connect this repo, or New → Static Site with settings below.
+
+services:
+  - type: web
+    name: portfolio
+    runtime: static
+    buildCommand: "true"
+    staticPublishPath: .
