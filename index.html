@@ -223,7 +223,7 @@ section{padding:7rem 5rem;}
 .stack-pill.ai:hover{background:#ea580c;color:white;border-color:#ea580c;}
 
 .exp-section{background:var(--cream);}
-.exp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
+.exp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:4rem;background:var(--rule);border:1px solid var(--rule);border-radius:20px;overflow:hidden;}
 @media(max-width:1200px){.exp-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:720px){.exp-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.exp-grid{grid-template-columns:1fr;}}
@@ -237,6 +237,27 @@ section{padding:7rem 5rem;}
 .exp-company{font-weight:700;font-size:1rem;margin-bottom:.35rem;transition:color .25s;}
 .exp-role{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:.5rem;transition:color .25s;}
 .exp-period{font-size:12px;font-family:var(--font-mono);color:var(--muted2);transition:color .25s;}
+.exp-edu{max-width:56rem;margin:3.25rem auto 0;}
+.exp-edu-inner{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem;
+  background:var(--white);border:1px solid var(--rule);border-radius:20px;padding:1.65rem 2rem 1.65rem 1.65rem;
+  border-left:3px solid var(--ink);box-shadow:0 2px 24px rgba(0,0,0,.04);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.exp-edu-inner:hover{transform:translateY(-3px);box-shadow:0 24px 48px rgba(0,0,0,.07);border-color:rgba(0,0,0,.06);}
+.exp-edu-meta{display:flex;flex-direction:column;gap:4px;min-width:7rem;}
+.exp-edu-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);}
+.exp-edu-years{font-size:12px;font-family:var(--font-mono);color:var(--muted);}
+.exp-edu-body{flex:1;min-width:200px;}
+.exp-edu-school{font-family:var(--font-serif);font-size:clamp(1.15rem,2vw,1.35rem);font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1.2;margin-bottom:.35rem;}
+.exp-edu-degree{font-size:14px;color:var(--muted);line-height:1.55;}
+.exp-edu-badge{
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink);background:var(--cream);border:1px solid var(--rule);border-radius:100px;padding:6px 14px;
+  line-height:1.35;text-align:center;max-width:15rem;
+}
+.exp-edu-honor{margin:.5rem 0 0;font-size:13px;color:var(--muted);line-height:1.55;max-width:32rem;}
+.exp-edu-honor strong{color:var(--ink);font-weight:600;}
 .cta-section{background:var(--ink);padding:8rem 5rem;text-align:center;position:relative;overflow:hidden;}
 .cta-section::before{content:"LET'S TALK";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-serif);font-size:20vw;font-weight:300;color:rgba(255,255,255,.03);white-space:nowrap;pointer-events:none;}
 .cta-section .s-label{color:rgba(255,255,255,.35);justify-content:center;}
@@ -272,6 +293,9 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   .builds-grid,.trust-grid,.process-grid,.social-proof-grid{grid-template-columns:1fr;}
   .social-proof-section{padding:4rem 1.5rem;}
   .project-item{grid-template-columns:40px 1fr auto;gap:1rem;}
+  .exp-edu{margin-top:2.5rem;}
+  .exp-edu-inner{flex-direction:column;align-items:flex-start;padding:1.5rem 1.35rem 1.5rem 1.25rem;}
+  .exp-edu-badge{align-self:flex-start;}
   .cta-section{padding:5rem 1.5rem;}
   footer{padding:1.5rem;flex-direction:column;text-align:center;}
 }
@@ -299,7 +323,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
     <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Available for new projects</div>
     <p class="hero-role">Senior Full Stack Engineer <span>·</span> AI systems, platforms &amp; distributed backends</p>
     <h1>I build scalable software that drives<br>real business <em>outcomes.</em></h1>
-    <p class="hero-desc hero-desc--tight">5+ years shipping production systems across <strong>FinTech</strong>, <strong>GIS</strong>, and <strong>AI-led products</strong> — owning architecture through deployment.</p>
+    <p class="hero-desc hero-desc--tight">5+ years shipping production systems across <strong>FinTech</strong>, <strong>GIS</strong>, <strong>Health</strong>, and <strong>AI-led products</strong> — owning architecture through deployment.</p>
     <p class="hero-desc">I partner with startups and enterprises to turn complex requirements into <strong>fast, observable, maintainable</strong> software your team can run for years.</p>
     <div class="hero-actions">
       <a href="mailto:qursom@outlook.com" class="btn-black">Book a Strategy Call →</a>
@@ -661,11 +685,18 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
       <div class="exp-role">Software Developer</div>
       <div class="exp-period">2017 — 2018</div>
     </div>
-    <div class="exp-card">
-      <div class="exp-dot"></div>
-      <div class="exp-company">NUST — College of EME</div>
-      <div class="exp-role">BE Computer Engineering</div>
-      <div class="exp-period">2013 — 2017 · Gold Medalist</div>
+  </div>
+  <div class="exp-edu">
+    <div class="exp-edu-inner reveal">
+      <div class="exp-edu-meta">
+        <span class="exp-edu-eyebrow">Education</span>
+        <span class="exp-edu-years">2013 — 2017</span>
+      </div>
+      <div class="exp-edu-body">
+        <div class="exp-edu-school">NUST — College of EME</div>
+        <div class="exp-edu-degree">BE Computer Engineering</div>
+      </div>
+      <span class="exp-edu-badge">Gold medalist · Final year project</span>
     </div>
   </div>
 </section>
