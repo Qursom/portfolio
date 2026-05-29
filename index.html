@@ -141,7 +141,8 @@ section{padding:7rem 5rem;}
 .build-text{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;transition:color .25s;}
 .build-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .tag{font-size:11px;font-family:var(--font-mono);background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:3px 8px;color:var(--muted);transition:all .25s;}
-.build-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--ink);opacity:.7;transition:opacity .2s,color .25s;}
+.build-card-links{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;margin-top:1rem;}
+.build-card-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--ink);opacity:.7;transition:opacity .2s,color .25s;}
 .build-card:hover .build-card-link{color:rgba(255,255,255,.9);opacity:1;}
 .build-card-link:hover{opacity:1;}
 
@@ -298,6 +299,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   .exp-edu-badge{align-self:flex-start;}
   .cta-section{padding:5rem 1.5rem;}
   footer{padding:1.5rem;flex-direction:column;text-align:center;}
+  .footer-right{flex-wrap:wrap;justify-content:center;gap:1rem 1.5rem;}
 }
 </style>
 </head>
@@ -433,7 +435,10 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
       <div class="build-title">Mentorship &amp; Consulting</div>
       <p class="build-text">1-on-1 guidance for developers and teams — focused on real-world engineering, system design, and production practices.</p>
       <div class="build-tags"><span class="tag">Mentorship</span><span class="tag">System Design</span><span class="tag">Code Review</span></div>
-      <a href="https://www.codementor.io/@qursom" target="_blank" rel="noopener noreferrer" class="build-card-link">Tutoring on Codementor ↗</a>
+      <div class="build-card-links">
+        <a href="https://www.codementor.io/@qursom" target="_blank" rel="noopener noreferrer" class="build-card-link">Tutoring on Codementor ↗</a>
+        <a href="https://www.fiverr.com/s/7YPNV0E" target="_blank" rel="noopener noreferrer" class="build-card-link">Hire on Fiverr ↗</a>
+      </div>
     </div>
     <div class="build-card">
       <span class="build-icon">🐛</span>
@@ -451,7 +456,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   <p class="s-sub">Systems built for real users, real data, and real business outcomes.</p>
   <div class="project-list">
 
-    <a href="https://github.com/Qursom/AI_Career_copilot" target="_blank" class="project-item reveal">
+    <a href="https://ai-career-d9il.onrender.com/" target="_blank" class="project-item reveal">
       <div class="proj-num">01</div>
       <div>
         <div class="proj-header"><span class="proj-title">🚀 AI Career Copilot</span><span class="proj-badge b-ai">AI Product</span><span class="proj-badge b-os">Open Source</span></div>
@@ -532,7 +537,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
       <div class="proj-arrow" style="color:var(--rule);">—</div>
     </div>
 
-    <a href="https://risetech.ai/portfolio/optha-insights" target="_blank" rel="noopener noreferrer" class="project-item reveal" style="border-bottom:none;">
+    <a href="https://risetech.ai/portfolio/optha-insights" target="_blank" rel="noopener noreferrer" class="project-item reveal">
       <div class="proj-num">06</div>
       <div>
         <div class="proj-header"><span class="proj-title">🏆 Ophthahelp — Eye Diagnostics</span><span class="proj-badge b-award">Gold Medal · NUST</span></div>
@@ -544,6 +549,22 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
           <li>Cloud-based image analysis system</li>
         </ul>
         <p class="proj-tech-line"><strong>Tech:</strong> AWS, MySQL, Mobile + Cloud</p>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a href="https://shinediva.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-item reveal" style="border-bottom:none;">
+      <div class="proj-num">07</div>
+      <div>
+        <div class="proj-header"><span class="proj-title">🕯️ ShineDiva — E-Commerce Platform</span><span class="proj-badge b-live">Live</span><span class="proj-badge b-ent">E-Commerce</span></div>
+        <p class="proj-desc">Full-stack candle brand platform for Pakistan — customer storefront plus an admin panel to manage products, orders, inventory, and store content without touching code.</p>
+        <div class="proj-block-label">Impact</div>
+        <ul class="proj-bullet-list">
+          <li>Public shop with collections, cart checkout, and order tracking</li>
+          <li>Admin dashboard for products, orders, and day-to-day store operations</li>
+          <li>WhatsApp contact and newsletter — deployed on Vercel</li>
+        </ul>
+        <p class="proj-tech-line"><strong>Tech:</strong> Next.js, Supabase, Vercel, admin panel</p>
       </div>
       <div class="proj-arrow">↗</div>
     </a>
@@ -639,7 +660,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   <h2 class="s-title">Tools I ship with every day.</h2>
   <p class="s-sub">Stack aligned to production needs — performance, maintainability, and scale.</p>
   <div class="stack-group-header">Backend</div>
-  <div class="stack-row reveal"><span class="stack-pill">Node.js</span><span class="stack-pill">NestJS</span><span class="stack-pill">Express</span><span class="stack-pill">Java Spring Boot</span><span class="stack-pill">Microservices</span></div>
+  <div class="stack-row reveal"><span class="stack-pill">Node.js</span><span class="stack-pill">NestJS</span><span class="stack-pill">Express</span><span class="stack-pill">Microservices</span></div>
   <div class="stack-group-header">Frontend</div>
   <div class="stack-row reveal"><span class="stack-pill">Next.js</span><span class="stack-pill">Angular</span><span class="stack-pill">React</span><span class="stack-pill">TypeScript</span></div>
   <div class="stack-group-header">AI &amp; GenAI</div>
@@ -647,7 +668,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   <div class="stack-group-header">DevOps &amp; Cloud</div>
   <div class="stack-row reveal"><span class="stack-pill">AWS</span><span class="stack-pill">Docker</span><span class="stack-pill">Kubernetes</span><span class="stack-pill">Jenkins</span><span class="stack-pill">CI/CD</span></div>
   <div class="stack-group-header">Databases</div>
-  <div class="stack-row reveal"><span class="stack-pill">PostgreSQL</span><span class="stack-pill">MongoDB</span><span class="stack-pill">Redis</span><span class="stack-pill">MySQL</span></div>
+  <div class="stack-row reveal"><span class="stack-pill">PostgreSQL</span><span class="stack-pill">MongoDB</span><span class="stack-pill">Redis</span><span class="stack-pill">MySQL</span><span class="stack-pill">Supabase</span></div>
 </section>
 
 <section id="experience" class="exp-section">
@@ -710,6 +731,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
     <a href="#projects" class="btn-outline-white">View My Work</a>
     <a href="https://www.linkedin.com/in/qursom" target="_blank" class="btn-outline-white">LinkedIn</a>
     <a href="https://github.com/Qursom" target="_blank" class="btn-outline-white">GitHub</a>
+    <a href="https://www.fiverr.com/s/7YPNV0E" target="_blank" rel="noopener noreferrer" class="btn-outline-white">Fiverr</a>
   </div>
   <div class="cta-email"><a href="mailto:qursom@outlook.com">qursom@outlook.com</a> · Islamabad, Pakistan · Remote worldwide</div>
 </section>
@@ -720,6 +742,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
     <a href="https://github.com/Qursom" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://www.linkedin.com/in/qursom" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     <a href="https://www.codementor.io/@qursom" target="_blank" rel="noopener noreferrer">Codementor</a>
+    <a href="https://www.fiverr.com/s/7YPNV0E" target="_blank" rel="noopener noreferrer">Fiverr</a>
     <a href="mailto:qursom@outlook.com">Email</a>
   </div>
 </footer>
