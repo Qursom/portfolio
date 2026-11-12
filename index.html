@@ -292,6 +292,18 @@ section{padding:7rem var(--pad);}
 }
 .exp-edu-honor{margin:.5rem 0 0;font-size:13px;color:var(--muted);line-height:1.55;max-width:32rem;}
 .exp-edu-honor strong{color:var(--ink);font-weight:600;}
+.other-work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:18px;overflow:hidden;margin-top:.75rem;}
+.other-card{background:var(--white);padding:1.6rem 1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.3rem;transition:background .25s;}
+.other-card:hover{background:var(--ink);}
+.other-card-title{font-weight:700;font-size:.97rem;letter-spacing:-.01em;transition:color .25s;}
+.other-card:hover .other-card-title{color:var(--white);}
+.other-card-desc{font-size:13px;color:var(--muted);line-height:1.6;margin:0;transition:color .25s;}
+.other-card:hover .other-card-desc{color:rgba(255,255,255,.58);}
+.other-card-stack{font-size:11px;font-family:var(--font-mono);color:var(--muted2);margin-top:.2rem;transition:color .25s;}
+.other-card:hover .other-card-stack{color:rgba(255,255,255,.4);}
+.other-card-link{margin-top:auto;padding-top:.75rem;font-size:12px;font-weight:700;color:var(--pop);letter-spacing:.04em;}
+@media(max-width:900px){.other-work-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.other-work-grid{grid-template-columns:1fr;}}
 .cta-section{background:var(--ink);padding:8rem var(--pad);text-align:center;position:relative;overflow:hidden;}
 .cta-section::before{content:"LET'S TALK";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-serif);font-size:18vw;font-weight:300;color:rgba(255,255,255,.035);white-space:nowrap;pointer-events:none;}
 .cta-section .s-label{color:rgba(255,255,255,.35);justify-content:center;}
@@ -463,11 +475,11 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
 
 <section class="hero" id="home">
   <div>
-    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Senior Full-Stack Engineer · 9+ Years Experience</div>
-    <h1>Senior Full-Stack Engineer shipping <em>AI-powered products</em> with Node.js, Angular, React &amp; TypeScript.</h1>
-    <p class="hero-desc">I build production-grade web applications, SaaS platforms, APIs, and AI-powered systems — from frontend architecture and backend services to databases, integrations, and cloud deployment.</p>
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Senior Full-Stack Engineer · 7+ Years Experience</div>
+    <h1>Senior Full-Stack Engineer &amp; <em>AI Engineer</em>  </h1>
+    <p class="hero-desc">I build production web platforms with Angular, Node.js/NestJS and MongoDB (8+ years, 10K+ users, 1M+ daily transactions), and now add RAG and AI features to them with Next.js, NestJS and LangGraph.</p>
     <p class="hero-proof"><span>10K+ Active Users</span> · <span>1M+ Daily Transactions</span> · <span>35% Performance Improvement</span> · <span>99.99% Availability</span></p>
-    <p class="hero-avail">Open to <strong>Senior Full-Stack, Senior Node.js &amp; AI Full-Stack</strong> roles — remote or freelance.</p>
+    <p class="hero-avail">Available Now for <strong> Senior Node.js , Senior Full-Stack &amp; AI Engineer </strong> roles — remote or freelance.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn-black">View My Work</a>
       <a href="resume.html" class="btn-ghost">Download Resume</a>
@@ -477,7 +489,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   <div class="hero-panel">
     <div class="panel-available">
       <div class="panel-available-text">Open to senior full-stack, Node.js &amp; AI roles</div>
-      <div class="panel-available-badge">AVAILABLE</div>
+      <div class="panel-available-badge">AVAILABLE NOW</div>
     </div>
     <div class="panel-stat">
       <div class="panel-stat-num">9<em>yr+</em></div>
@@ -550,7 +562,6 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
       <div class="case-cta">
         <a class="btn-sm" href="https://web-tau-silk-53.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Demo</a>
         <a class="btn-sm-ghost" href="https://www.youtube.com/watch?v=SEJeC2w_OSU" target="_blank" rel="noopener noreferrer">Watch Demo</a>
-        <a class="btn-sm-ghost" href="https://github.com/Qursom/frontdesk-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </article>
 
@@ -576,31 +587,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
       <p class="case-role"><strong>My role:</strong> Full-Stack &amp; AI Engineer — owned architecture, frontend, backend, AI workflows, authentication, billing, and production deployment.</p>
       <div class="case-cta">
         <a class="btn-sm" href="https://ai-career-copilot-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-      </div>
-    </article>
-
-    <article class="case case-featured reveal">
-      <div class="case-top">
-        <div>
-          <div class="case-cat">Full-Stack · MEAN · Real-Time</div>
-          <h3 class="proj-title">FoodTech</h3>
-          <p class="case-sub">Multi-Vendor AI-Powered Food Ordering Platform</p>
-        </div>
-        <span class="proj-badge b-live">Live</span>
-      </div>
-      <p class="proj-desc">A production-ready multi-vendor ordering platform supporting Customer, Vendor, Delivery, and Super Admin workflows.</p>
-      <div class="case-metrics"><span class="case-chip">4-role RBAC</span><span class="case-chip">Realtime Socket.IO</span><span class="case-chip">Gemini AI</span></div>
-      <p class="proj-tech-line"><strong>Tech:</strong> Angular · Node.js · Express.js · TypeScript · MongoDB · Socket.IO · PayPal · Leaflet · Gemini AI</p>
-      <div class="proj-block-label">Engineering Highlights</div>
-      <ul class="proj-bullet-list">
-        <li>4-role RBAC with customer, vendor, delivery, and super-admin dashboards</li>
-        <li>JWT authentication with HTTP-only cookies and real-time order tracking via Socket.IO</li>
-        <li>PayPal plus cash/pay-at-table workflows and map-based delivery</li>
-        <li>Gemini AI chatbot with MongoDB menu context and natural-language menu search</li>
-      </ul>
-      <p class="case-role"><strong>My role:</strong> Full-Stack Engineer — architecture, backend APIs, frontend workflows, authentication, real-time functionality, integrations, and deployment.</p>
-      <div class="case-cta">
-        <a class="btn-sm" href="https://foodtech-app-mean-stack.onrender.com/" target="_blank" rel="noopener noreferrer">View Live</a>
+        <a class="btn-sm-ghost" href="https://www.youtube.com/watch?v=tp4FOE8ud_s" target="_blank" rel="noopener noreferrer">Watch Demo</a>
       </div>
     </article>
 
@@ -649,77 +636,35 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
       <p class="case-role"><strong>My role:</strong> Backend Engineer — focused on API architecture, transaction processing, database optimization, caching, and reliability.</p>
     </article>
 
-    <article class="case reveal">
-      <div class="case-top">
-        <div>
-          <div class="case-cat">Enterprise GIS · 100+ Locations</div>
-          <h3 class="proj-title">GEPCO Enterprise GIS Platform</h3>
-          <p class="case-sub">Utility GIS &amp; Grid Management Platform</p>
-        </div>
-        <span class="proj-badge b-ent">Java / Spring MVC</span>
+    <div class="other-work-wrap reveal">
+      <p class="earlier-label">Other work</p>
+      <div class="other-work-grid">
+        <a href="https://foodtech-app-mean-stack.onrender.com/" target="_blank" rel="noopener noreferrer" class="other-card">
+          <div class="other-card-title">FoodTech</div>
+          <p class="other-card-desc">Multi-vendor food ordering platform</p>
+          <div class="other-card-stack">MEAN · Socket.IO · PayPal</div>
+          <div class="other-card-link">View Live →</div>
+        </a>
+        <a href="https://gis.gepcoerp.com.pk/gepco/login" target="_blank" rel="noopener noreferrer" class="other-card">
+          <div class="other-card-title">GEPCO Enterprise GIS</div>
+          <p class="other-card-desc">Utility GIS for 100+ locations</p>
+          <div class="other-card-stack">Java Spring MVC</div>
+          <div class="other-card-link">View Live →</div>
+        </a>
+        <a href="https://shinediva.vercel.app/" target="_blank" rel="noopener noreferrer" class="other-card">
+          <div class="other-card-title">ShineDiva</div>
+          <p class="other-card-desc">Next.js e-commerce storefront</p>
+          <div class="other-card-stack">Next.js · Supabase · Vercel</div>
+          <div class="other-card-link">View Live →</div>
+        </a>
+        <a href="https://risetech.ai/portfolio/optha-insights" target="_blank" rel="noopener noreferrer" class="other-card">
+          <div class="other-card-title">Ophthahelp</div>
+          <p class="other-card-desc">AI-assisted eye-screening system — Gold Medal, NUST 2017</p>
+          <div class="other-card-stack">REST APIs · AWS · IBM Watson</div>
+          <div class="other-card-link">Case Study →</div>
+        </a>
       </div>
-      <p class="proj-desc">Enterprise GIS platform supporting utility operations across 100+ locations. Primary backend stack is Java Spring MVC — not Node.js.</p>
-      <p class="proj-tech-line"><strong>Tech:</strong> Java Spring MVC · PostgreSQL · GIS · REST APIs</p>
-      <div class="proj-block-label">Engineering Highlights</div>
-      <ul class="proj-bullet-list">
-        <li>100+ operational locations with geospatial visualization</li>
-        <li>Grid and Feeder Management Systems, plus mobile field-data APIs</li>
-        <li>Centralized utility data and automated line-loss calculations</li>
-      </ul>
-      <p class="case-role"><strong>My role:</strong> Led GIS development supporting 100+ utility locations.</p>
-      <div class="case-cta">
-        <a class="btn-sm" href="https://gis.gepcoerp.com.pk/gepco/login" target="_blank" rel="noopener noreferrer">View Live</a>
-      </div>
-    </article>
-
-    <article class="case reveal">
-      <div class="case-top">
-        <div>
-          <div class="case-cat">eCommerce · Next.js</div>
-          <h3 class="proj-title">ShineDiva</h3>
-          <p class="case-sub">Next.js E-Commerce Platform</p>
-        </div>
-        <span class="proj-badge b-live">Live</span>
-      </div>
-      <p class="proj-desc">Production eCommerce platform with customer storefront and administrative workflows.</p>
-      <p class="proj-tech-line"><strong>Tech:</strong> Next.js · React · Supabase · Vercel · Cloudinary</p>
-      <div class="proj-block-label">Engineering Highlights</div>
-      <ul class="proj-bullet-list">
-        <li>Product catalog, cart, checkout, and order tracking</li>
-        <li>Admin dashboard for products, orders, and inventory</li>
-        <li>Supabase auth/data, Cloudinary media, Vercel deployment</li>
-      </ul>
-      <p class="case-role"><strong>My role:</strong> Full-stack delivery of storefront and admin operations.</p>
-      <div class="case-cta">
-        <a class="btn-sm" href="https://shinediva.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-      </div>
-    </article>
-
-    <p class="earlier-label">Earlier work · Featured innovation</p>
-
-    <article class="case case-early reveal">
-      <div class="case-top">
-        <div>
-          <div class="case-cat">HealthTech · AI/ML · Backend · Cloud</div>
-          <h3 class="proj-title">Ophthahelp</h3>
-          <p class="case-sub">AI-Assisted Eye Screening &amp; Remote Diagnostics Platform</p>
-        </div>
-        <span class="proj-badge b-award">Gold Medal · NUST</span>
-      </div>
-      <p class="proj-desc">University innovation project (Jun 2016 — Jun 2017, College of EME, NUST). An AI-assisted healthcare solution designed to improve access to eye-care screening in remote areas by combining smartphone-based fundus imaging, a mobile application, cloud infrastructure, and supervised image classification.</p>
-      <p class="proj-tech-line"><strong>Tech:</strong> REST APIs · AWS · IBM Watson API · Cloud storage · Supervised image classification</p>
-      <div class="proj-block-label">Backend Engineering Highlights</div>
-      <ul class="proj-bullet-list">
-        <li>Backend services for patient registration, medical data management, fundus image processing, and diagnostic workflows</li>
-        <li>IBM Watson API integration for supervised classification of fundus images as healthy or unhealthy</li>
-        <li>Workflows to receive images, call the classification service, process results, and expose them to the application</li>
-        <li>REST APIs connecting the mobile app, AWS cloud storage/processing, and image-processing components</li>
-      </ul>
-      <p class="case-role"><strong>My role:</strong> Backend Engineer — backend architecture, REST APIs, cloud workflows, image-processing integration, and IBM Watson API integration. Did not own the mobile app or fundus-camera hardware.</p>
-      <div class="case-cta">
-        <a class="btn-sm-ghost" href="https://risetech.ai/portfolio/optha-insights" target="_blank" rel="noopener noreferrer">View Case Study</a>
-      </div>
-    </article>
+    </div>
 
   </div>
 </section>
@@ -893,7 +838,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   <div class="s-label">About</div>
   <h2 class="s-title">I build production software — and AI that businesses can actually trust.</h2>
   <div class="about-copy">
-    <p>I'm a Senior Full-Stack &amp; AI Engineer with 9+ years of shipping software that real users depend on — a PropTech platform serving 10K+ users, a FinTech backend processing 1M+ daily transactions, and AI agents clinics trust to handle patient enquiries after hours.</p>
+    <p>I'm a Senior Full-Stack &amp; AI Engineer with 7+ years of shipping software that real users depend on — a PropTech platform serving 10K+ users, a FinTech backend processing 1M+ daily transactions, and AI agents clinics trust to handle patient enquiries after hours.</p>
     <p>My stack is TypeScript end to end: NestJS and Node.js on the backend, Next.js, React, and Angular on the frontend, with MongoDB, PostgreSQL, Redis, and AWS under the hood. I own the full delivery — architecture, APIs, frontend, integrations, cloud deployment, and production support.</p>
     <p>My latest focus is applied AI. <strong>FrontDesk AI</strong> is a multi-tenant, RAG-powered receptionist that embeds on a clinic's site with one script tag — it answers patient questions from the clinic's own knowledge base, captures consented leads, and routes emergencies to a human — with deterministic guardrails, EU AI Act disclosure, and GDPR compliance built in. <strong>AI Career Copilot</strong> is a live ATS analysis SaaS built with LangGraph, Qdrant, and Stripe. Both are production-deployed and open to inspect.</p>
     <p>I build for longevity: clean APIs, strong types, explicit data contracts, and architecture the next engineer can read in ten minutes. If a system isn't maintainable, it isn't done.</p>
@@ -908,7 +853,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
   <div class="hire-layout">
     <div>
       <div class="hire-proof">
-        <span class="case-chip">9+ years in production</span>
+        <span class="case-chip">7+ years in production</span>
         <span class="case-chip">Live SaaS &amp; marketplaces</span>
         <span class="case-chip">Live AI products</span>
         <span class="case-chip">Remote worldwide</span>
@@ -949,9 +894,7 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
         <li>Clear communication and weekly progress</li>
         <li>You own the code, infra, and accounts</li>
       </ul>
-      <a href="mailto:qursom@outlook.com?subject=Hire%20Qursom%20Saqlain" class="btn-white">Hire Me</a>
-      <a href="https://www.fiverr.com/s/7YPNV0E" target="_blank" rel="noopener noreferrer" class="btn-outline-white">Hire on Fiverr</a>
-      <a href="#contact" class="btn-outline-white">Contact Me</a>
+      <a href="mailto:qursom@outlook.com?subject=Book%20a%2020-Min%20Call" class="btn-white">Book a 20-min call</a>
     </aside>
   </div>
 </section>
