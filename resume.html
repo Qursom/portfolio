@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume — Qursom Saqlain | Senior Full-Stack Engineer</title>
-<meta name="description" content="Resume of Qursom Saqlain, Senior Full-Stack Engineer specializing in Angular, Node.js, NestJS and TypeScript.">
+<title>Resume — Qursom Saqlain | Senior Full-Stack &amp; AI Engineer</title>
+<meta name="description" content="Resume of Qursom Saqlain, Senior Full-Stack &amp; AI Engineer specialising in Node.js, NestJS, Angular, React, TypeScript and production AI features.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,21 +15,40 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);backg
 .wrap{max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:2.25rem 2rem 2.5rem;}
 .bar{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
 .bar a{color:var(--ink);font-weight:700;font-size:13px;text-decoration:none;}
+.bar span{display:flex;gap:1rem;}
 h1{font-size:1.85rem;letter-spacing:-.03em;}
 .role{color:var(--pop);font-weight:700;margin:.25rem 0 .5rem;}
 .meta{font-size:13px;color:var(--muted);}
 .meta a{color:var(--ink);}
+.avail{font-size:13px;color:var(--muted);margin-top:.35rem;}
 h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:1.6rem 0 .7rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem;}
 h3{font-size:1rem;margin-top:1rem;}
+.company-blurb{font-size:12px;color:var(--muted);margin:.1rem 0 .2rem;}
 .job{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:.15rem 0 .4rem;}
+.job-entry{margin-top:.6rem;}
 ul{padding-left:1.1rem;font-size:14px;color:#333;}
 li{margin:.25rem 0;}
 .skills{font-size:14px;color:#333;line-height:1.7;}
+.proj-entry{margin-top:.9rem;}
+.proj-entry h3{margin-top:0;}
+.proj-label{font-size:12px;color:var(--muted);font-style:italic;margin:.1rem 0 .2rem;}
+.proj-tech{font-size:13px;color:#333;margin:.2rem 0;}
+.proj-quality{font-size:12px;color:var(--muted);margin:.15rem 0;}
+.proj-links{font-size:12px;margin:.15rem 0;}
+.proj-links a{color:var(--ink);text-decoration:underline;margin-right:.5rem;}
+.other-proj{font-size:13px;color:#333;margin-top:.9rem;line-height:1.7;}
 .note{font-size:12px;color:var(--muted);margin-top:1.5rem;}
+@page{size:A4;margin:1.5cm;}
 @media print{
-  body{background:#fff;padding:0;}
-  .wrap{border:0;border-radius:0;padding:0;}
+  body{background:#fff;padding:0;font-size:12px;}
+  .wrap{border:0;border-radius:0;padding:0;max-width:100%;}
   .no-print{display:none;}
+  h2{page-break-after:avoid;}
+  .job-entry,.proj-entry{page-break-inside:avoid;}
+  a{color:#000;text-decoration:none;}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:10px;color:#555;}
+  .proj-links a::after{content:none;}
+  h3{margin-top:.6rem;}
 }
 </style>
 </head>
@@ -37,68 +56,129 @@ li{margin:.25rem 0;}
 <div class="wrap">
   <div class="bar no-print">
     <a href="index.html">← Portfolio</a>
-    <a href="#" onclick="window.print();return false;">Print / Save as PDF</a>
+    <span>
+      <a href="javascript:void(0)" onclick="window.print();return false;">Print</a>
+      <a href="Qursom-Saqlain-Resume.pdf" download="Qursom-Saqlain-Resume.pdf">Download PDF</a>
+    </span>
   </div>
   <h1>Qursom Saqlain</h1>
-  <p class="role">Senior Full-Stack Engineer · Node.js, Angular , React &amp; TypeScript</p>
+  <p class="role">Senior Full-Stack &amp; AI Engineer · Node.js, NestJS, Angular, React, TypeScript</p>
   <p class="meta">Islamabad, Pakistan · Remote worldwide<br>
     <a href="mailto:qursom@outlook.com">qursom@outlook.com</a> ·
     <a href="https://www.linkedin.com/in/qursom">LinkedIn</a> ·
     <a href="https://github.com/Qursom">GitHub</a> ·
     <a href="https://qursom.github.io/portfolio/">Portfolio</a>
   </p>
+  <p class="avail">Available immediately · Remote (UTC+5, flexible overlap with EU/US) · Full-time or contract</p>
+
   <h2>Summary</h2>
-  <p class="skills">Senior Full-Stack Engineer with 6+ years building production applications across PropTech, FinTech, GIS, eCommerce and AI-powered SaaS. Strongest in  Node.js, Angular, React and TypeScript, with NestJS/Express APIs, databases, cloud and AI integrations.</p>
+  <p class="skills">9+ years building production software across PropTech, FinTech, GIS, and AI SaaS.<br>
+  Strongest in Node.js / NestJS / TypeScript back-ends and Angular / React / Next.js front-ends.<br>
+  Ships production AI features — RAG pipelines, LLM agents, eval suites, guardrails, and cost tracking.</p>
+
   <h2>Experience</h2>
-  <h3>LMKR — Application Engineer, Full Stack</h3>
-  <div class="job"><span>Senior-level IC / Lead Contributor</span><span>Sep 2022 — Jun 2026 · Remote</span></div>
-  <ul>
-    <li>Led full-stack architecture and development across Gridizen, GEPCO and PRMSC.</li>
-    <li>Led backend architecture for Gridizen (10K+ active users); Stripe, Rightmove, Google Maps and automation.</li>
-    <li>Led GEPCO GIS development supporting 100+ utility locations (Java Spring MVC).</li>
-    <li>Built reusable Angular/TypeScript/RxJS modules and enterprise dashboards.</li>
-    <li>RabbitMQ async workflows; Redis/query optimization (+35% API/reporting); Docker/Kubernetes/CI/CD (−40% deploy time).</li>
-  </ul>
-  <h3>EcoFin Technologies — Software Engineer, Backend</h3>
-  <div class="job"><span>JORR FinTech marketplace</span><span>Dec 2021 — Aug 2022</span></div>
-  <ul>
-    <li>Node.js/Express microservices supporting 1M+ daily financial transactions.</li>
-    <li>REST APIs, PostgreSQL, Redis, idempotency and retries; 50% latency reduction; 99.99% availability.</li>
-  </ul>
-  <h3>Upwork / Fiverr — Freelance Full-Stack Developer</h3>
-  <div class="job"><span>MEAN / MERN delivery</span><span>May 2019 — Jan 2022</span></div>
-  <ul>
-    <li>5+ production apps: Angular, React, Next.js, Node.js, Express, TypeScript, MongoDB, PostgreSQL.</li>
-    <li>JWT/RBAC; Stripe, PayPal, Google Maps, Cloudinary, JazzCash, EasyPaisa.</li>
-  </ul>
-  <h3>Convo.com — Junior Software Engineer</h3>
-  <div class="job"><span></span><span>Mar 2018 — Apr 2019</span></div>
-  <ul>
-    <li>Reusable REST APIs using PHP and Oracle; MVC and TDD; collaboration with frontend and mobile teams.</li>
-  </ul>
-  <h3>RISETech — Software Developer</h3>
-  <div class="job"><span></span><span>Aug 2017 — Feb 2018</span></div>
-  <ul>
-    <li>Developed and tested RESTful services for medical applications.</li>
-  </ul>
-  <h2>Selected work</h2>
-  <ul>
-    <li>FrontDesk AI — Next.js, NestJS, MongoDB Atlas Vector Search, Gemini, RAG, multi-tenant embed widget.</li>
-    <li>AI Career Copilot — Next.js, NestJS, RAG, Qdrant, LangChain/LangGraph, Stripe.</li>
-    <li>FoodTech — MEAN multi-vendor ordering with Socket.IO, PayPal, Gemini AI.</li>
-    <li>Gridizen — Angular/NestJS PropTech, 10K+ users, AWS, Kubernetes, RabbitMQ.</li>
-    <li>JORR — Node.js FinTech backend, 1M+ daily transactions.</li>
-    <li>GEPCO — Enterprise GIS, Java Spring MVC, 100+ utility locations.</li>
-    <li>ShineDiva — Next.js eCommerce with admin workflows.</li>
-    <li>Ophthahelp (2016–2017, NUST) — Backend Engineer; REST APIs, AWS, IBM Watson supervised fundus classification (healthy vs. unhealthy); gold medal FYP.</li>
-  </ul>
+
+  <div class="job-entry">
+    <h3>LMKR — Application Engineer, Full Stack</h3>
+    <p class="company-blurb">[TODO: one-line description of LMKR]</p>
+    <div class="job"><span>Senior-level IC / Lead Contributor</span> <span>Sep 2022 – Jun 2026 · Remote</span></div>
+    <ul>
+      <li>Led full-stack architecture across Gridizen (PropTech), GEPCO (utility GIS) and [TODO: what PRMSC is].</li>
+      <li>Owned Gridizen backend end-to-end: NestJS, Stripe, Rightmove API, Google Maps — 10K+ active landlord/tenant users.</li>
+      <li>Reduced API and reporting latency 35% via Redis caching and query optimisation; cut deployment time 40% with Docker/Kubernetes CI/CD pipeline.</li>
+      <li>Built asynchronous job pipelines with RabbitMQ; maintained 99.99% uptime SLA.</li>
+      <li>Authored reusable Angular/TypeScript/RxJS component library used across all three products.</li>
+    </ul>
+  </div>
+
+  <div class="job-entry">
+    <h3>EcoFin Technologies — Software Engineer, Backend</h3>
+    <div class="job"><span>JORR FinTech marketplace</span> <span>Dec 2021 – Aug 2022</span></div>
+    <ul>
+      <li>Built Node.js/Express microservices processing 1M+ daily financial transactions.</li>
+      <li>Designed idempotent REST APIs over PostgreSQL + Redis; achieved 50% latency reduction and 99.99% availability.</li>
+    </ul>
+  </div>
+
+  <div class="job-entry">
+    <h3>Upwork / Fiverr — Freelance Full-Stack Developer</h3>
+    <div class="job"><span>MEAN / MERN delivery</span> <span>May 2019 – Nov 2021</span></div>
+    <ul>
+      <li>Delivered 5+ production apps: Angular, React, Next.js, Node.js, MongoDB, PostgreSQL.</li>
+      <li>Integrated Stripe, PayPal, Google Maps, Cloudinary, JazzCash/EasyPaisa; implemented JWT/RBAC auth.</li>
+    </ul>
+  </div>
+
+  <div class="job-entry">
+    <h3>Convo.com — Junior Software Engineer</h3>
+    <div class="job"><span></span> <span>Mar 2018 – Apr 2019</span></div>
+    <ul>
+      <li>Built reusable REST APIs in PHP/Oracle using MVC and TDD; collaborated with frontend and mobile teams.</li>
+    </ul>
+  </div>
+
+  <div class="job-entry">
+    <h3>RISETech — Software Developer</h3>
+    <div class="job"><span></span> <span>Aug 2017 – Feb 2018</span></div>
+    <ul>
+      <li>Developed and tested RESTful services for medical applications.</li>
+    </ul>
+  </div>
+
+  <h2>Selected Work</h2>
+
+  <div class="proj-entry">
+    <h3>FrontDesk AI</h3>
+    <p class="proj-label">Personal product, built and deployed solo</p>
+    <p class="proj-tech">Next.js · NestJS · MongoDB Atlas Vector Search · Gemini · RAG · multi-tenant embed widget</p>
+    <p class="proj-quality">Eval suite: [TODO] test cases, [TODO]% pass · [TODO] unit/integration tests in CI · p95 latency [TODO]s · ~$[TODO] per conversation</p>
+    <p class="proj-links">
+      <a href="https://web-tau-silk-53.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+      <a href="https://github.com/Qursom/frontdesk-ai" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.youtube.com/watch?v=SEJeC2w_OSU" target="_blank" rel="noopener">Demo Video</a>
+    </p>
+  </div>
+
+  <div class="proj-entry">
+    <h3>AI Career Copilot</h3>
+    <p class="proj-label">Personal product, built and deployed solo</p>
+    <p class="proj-tech">Next.js · NestJS · RAG · Qdrant · LangChain · LangGraph · Stripe</p>
+    <p class="proj-quality">Eval suite: [TODO] test cases, [TODO]% pass · [TODO] unit/integration tests in CI · p95 latency [TODO]s · ~$[TODO] per conversation</p>
+    <p class="proj-links">
+      <a href="https://ai-career-copilot-hazel.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+      <a href="[TODO: GitHub link]">GitHub [TODO]</a>
+    </p>
+  </div>
+
+  <div class="proj-entry">
+    <h3>Gridizen</h3>
+    <p class="proj-tech">Angular · NestJS · AWS · Kubernetes · RabbitMQ — 10K+ active users</p>
+    <p class="proj-links">
+      <a href="https://gridizen.co.uk/" target="_blank" rel="noopener">gridizen.co.uk</a>
+    </p>
+  </div>
+
+  <div class="proj-entry">
+    <h3>JORR</h3>
+    <p class="proj-tech">Node.js · Express · PostgreSQL · Redis — 1M+ daily transactions</p>
+    <p class="proj-links">[TODO: live/GitHub link]</p>
+  </div>
+
+  <p class="other-proj"><strong>Other:</strong> FoodTech (MEAN + Socket.IO + PayPal), ShineDiva (Next.js eCommerce), GEPCO GIS (Java Spring MVC, 100+ utility locations)</p>
+
   <h2>Skills</h2>
-  <p class="skills"><strong>Core:</strong> Angular, Node.js, NestJS, Express.js, TypeScript, JavaScript, REST APIs, MongoDB, PostgreSQL, Redis<br>
-  <strong>Also:</strong> React, Next.js, Microservices, RabbitMQ, Socket.IO, Docker, Kubernetes, AWS, Jenkins, Stripe, PayPal<br>
-  <strong>AI:</strong> Gemini, OpenAI, RAG, LangChain, LangGraph, Qdrant, BullMQ</p>
+  <p class="skills">
+    <strong>AI/LLM:</strong> RAG, LangChain, LangGraph, Gemini, OpenAI, Qdrant, MongoDB Vector Search, evals, guardrails<br>
+    <strong>Backend:</strong> Node.js, NestJS, Express.js, REST APIs, Microservices, RabbitMQ, BullMQ, Socket.IO<br>
+    <strong>Frontend:</strong> Angular, React, Next.js, TypeScript, JavaScript, RxJS<br>
+    <strong>Data:</strong> MongoDB, PostgreSQL, Redis<br>
+    <strong>Cloud/DevOps:</strong> AWS, Docker, Kubernetes, Jenkins, CI/CD<br>
+    <strong>Payments/Integrations:</strong> Stripe, PayPal, JazzCash, EasyPaisa, Google Maps, Cloudinary, Rightmove
+  </p>
+
   <h2>Education</h2>
-  <p class="skills"><strong>NUST — College of EME</strong> · BE Computer Engineering · 2013–2017 · Gold medalist, final year project</p>
-  <p class="note no-print">Tip: use Print → Save as PDF for a file you can attach to applications.</p>
+  <p class="skills"><strong>NUST — College of EME</strong> · BE Computer Engineering · 2013–2017 · Gold medalist<br>
+  Final-year project: <strong>Ophthahelp</strong> — Backend &amp; AI retinal screening system; REST APIs, AWS, IBM Watson supervised fundus image classification (healthy vs. unhealthy); awarded gold medal.</p>
 </div>
 </body>
 </html>
