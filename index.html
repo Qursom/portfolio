@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Qursom Saqlain | Senior Full-Stack Engineer | Angular, Node.js &amp; TypeScript</title>
-<meta name="description" content="Senior Full-Stack Engineer specializing in Angular, Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis, microservices, cloud infrastructure and AI-powered applications.">
+<meta name="description" content="Senior Full-Stack &amp; AI Engineer — Node.js, NestJS, Next.js, Angular, TypeScript, RAG and AI agents, cloud infrastructure, and production SaaS.">
 <meta name="theme-color" content="#0d0d0d">
 <meta name="author" content="Qursom Saqlain">
 <link rel="canonical" href="https://qursom.github.io/portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://qursom.github.io/portfolio/">
 <meta property="og:title" content="Qursom Saqlain | Senior Full-Stack Engineer | Angular, Node.js &amp; TypeScript">
-<meta property="og:description" content="Senior Full-Stack Engineer specializing in Angular, Node.js, NestJS, TypeScript, APIs, cloud, and AI-powered applications.">
+<meta property="og:description" content="Senior Full-Stack &amp; AI Engineer — Node.js, NestJS, Next.js, TypeScript, RAG and AI agents, cloud, and production SaaS.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qursom Saqlain | Senior Full-Stack Engineer">
@@ -523,8 +523,36 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
 <section id="projects" class="projects-section">
   <div class="s-label">Selected Work</div>
   <h2 class="s-title">Production case studies.</h2>
-  <p class="s-sub">Primary case studies first — AI SaaS, MEAN marketplace, PropTech, and FinTech — then GIS, eCommerce, and earlier innovation work.</p>
+  <p class="s-sub">Primary case studies first — AI agents, AI SaaS, MEAN marketplace, PropTech, and FinTech — then GIS, eCommerce, and earlier innovation work.</p>
   <div class="project-list">
+
+    <article class="case case-featured reveal">
+      <div class="case-top">
+        <div>
+          <div class="case-cat">AI Agent · RAG · Multi-Tenant SaaS</div>
+          <h3 class="proj-title">FrontDesk AI</h3>
+          <p class="case-sub">24/7 AI Receptionist for Clinics — Embeddable, Grounded, GDPR-Ready</p>
+        </div>
+        <span class="proj-badge b-live">Live</span>
+      </div>
+      <p class="proj-desc">An AI front-desk agent clinics drop onto their website with one script tag. It answers patient questions from the clinic's own knowledge base, captures consented leads for callback, and routes emergencies to a human — so no enquiry is lost after hours.</p>
+      <div class="case-metrics"><span class="case-chip">RAG on Atlas Vector Search</span><span class="case-chip">Deterministic safety guardrails</span><span class="case-chip">One-line embed widget</span></div>
+      <p class="proj-tech-line"><strong>Tech:</strong> Next.js 15 · React 19 · NestJS 11 · TypeScript · MongoDB Atlas Vector Search · Gemini 2.5 Flash · Gemini Embeddings · Vercel · Render (EU)</p>
+      <div class="proj-block-label">Engineering Highlights</div>
+      <ul class="proj-bullet-list">
+        <li>RAG pipeline — chunking, 768-dim Gemini embeddings, and <code>$vectorSearch</code> retrieval; every answer returns its sources and a structured action (reply, show lead form, or hand off)</li>
+        <li>Deterministic guardrails run before the LLM: emergencies go to the clinic, 999 or NHS 111, with no diagnosis or medication advice</li>
+        <li>Multi-tenant by design — tenant-scoped data on every query, per-tenant CSP <code>frame-ancestors</code>, and a one-line script loader that injects the chat widget</li>
+        <li>Compliance built in: explicit GDPR consent, TTL auto-deletion (chats 30 days, leads 90 days), EU AI Act AI-disclosure, and rate limiting</li>
+        <li>Clinic-owner dashboard and admin lead manager; Jest tests plus an end-to-end answer-quality eval suite</li>
+      </ul>
+      <p class="case-role"><strong>My role:</strong> Full-Stack &amp; AI Engineer — designed and built the product end to end: RAG pipeline, guardrails, NestJS API, Next.js widget and dashboards, multi-tenant model, compliance, and EU deployment.</p>
+      <div class="case-cta">
+        <a class="btn-sm" href="https://web-tau-silk-53.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Demo</a>
+        <a class="btn-sm-ghost" href="https://www.youtube.com/watch?v=SEJeC2w_OSU" target="_blank" rel="noopener noreferrer">Watch Demo</a>
+        <a class="btn-sm-ghost" href="https://github.com/Qursom/frontdesk-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </article>
 
     <article class="case case-featured reveal">
       <div class="case-top">
@@ -698,44 +726,44 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
 
 <section id="builds" class="builds-section">
   <div class="s-label">What I Build</div>
-  <h2 class="s-title">Services for products that have to last.</h2>
-  <p class="s-sub">Angular-first full-stack delivery — with Node.js backends, SaaS platforms, AI systems, and cloud operations.</p>
+  <h2 class="s-title">Services for products that have to <em>ship.</em></h2>
+  <p class="s-sub">From AI agents with real guardrails to full-stack SaaS — I build the whole thing, end to end, and own the outcome.</p>
   <div class="builds-grid builds-grid--quad reveal">
     <div class="build-card">
       <div class="build-num">01</div>
-      <div class="build-title">Full-Stack Web Applications</div>
-      <p class="build-text">Angular, React, Next.js, Node.js, TypeScript and production-ready APIs.</p>
-      <div class="build-tags"><span class="tag">Angular</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
+      <div class="build-title">AI Agents &amp; Chatbots</div>
+      <p class="build-text">Customer-facing AI that answers from your own data, captures consented leads, and hands off to a human when it matters. Built with RAG, deterministic guardrails, and GDPR compliance — like FrontDesk AI.</p>
+      <div class="build-tags"><span class="tag">RAG</span><span class="tag">Gemini</span><span class="tag">NestJS</span><span class="tag">Multi-tenant</span><span class="tag">Guardrails</span></div>
     </div>
     <div class="build-card">
       <div class="build-num">02</div>
-      <div class="build-title">Node.js Backend Systems</div>
-      <p class="build-text">NestJS/Express APIs, microservices, authentication, caching, background jobs and integrations.</p>
-      <div class="build-tags"><span class="tag">NestJS</span><span class="tag">Express.js</span><span class="tag">REST APIs</span><span class="tag">Redis</span></div>
+      <div class="build-title">RAG &amp; LLM Features</div>
+      <p class="build-text">Vector search pipelines, grounded answers with cited sources, structured AI output, and answer-quality eval suites so your AI features are accurate, safe, and measurable.</p>
+      <div class="build-tags"><span class="tag">RAG</span><span class="tag">Qdrant</span><span class="tag">LangGraph</span><span class="tag">Vector Search</span><span class="tag">OpenAI</span></div>
     </div>
     <div class="build-card">
       <div class="build-num">03</div>
-      <div class="build-title">SaaS &amp; Marketplace Platforms</div>
-      <p class="build-text">Multi-role applications, dashboards, payments, subscriptions, workflows and third-party integrations.</p>
-      <div class="build-tags"><span class="tag">RBAC</span><span class="tag">Stripe</span><span class="tag">PayPal</span><span class="tag">Dashboards</span></div>
+      <div class="build-title">Full-Stack Web Applications</div>
+      <p class="build-text">Angular, React, or Next.js frontends on NestJS / Node.js APIs — with real auth, strong types, and architecture the next engineer can maintain.</p>
+      <div class="build-tags"><span class="tag">Angular</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">TypeScript</span></div>
     </div>
     <div class="build-card">
       <div class="build-num">04</div>
-      <div class="build-title">AI-Powered Applications</div>
-      <p class="build-text">LLM integrations, AI workflows, RAG, structured AI processing and AI SaaS products.</p>
-      <div class="build-tags"><span class="tag">Gemini</span><span class="tag">OpenAI</span><span class="tag">RAG</span><span class="tag">LangGraph</span></div>
+      <div class="build-title">SaaS &amp; Marketplace Platforms</div>
+      <p class="build-text">Multi-tenant architecture, role-based access, dashboards, subscriptions, background jobs, and workflows that match how you sell — built to handle real user volume from day one.</p>
+      <div class="build-tags"><span class="tag">RBAC</span><span class="tag">Stripe</span><span class="tag">Multi-tenant</span><span class="tag">BullMQ</span><span class="tag">Dashboards</span></div>
     </div>
     <div class="build-card">
       <div class="build-num">05</div>
-      <div class="build-title">Cloud &amp; DevOps</div>
-      <p class="build-text">Docker, Kubernetes, AWS, Jenkins and CI/CD automation.</p>
-      <div class="build-tags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span></div>
+      <div class="build-title">Payments &amp; Integrations</div>
+      <p class="build-text">Stripe, PayPal, Google Maps, auth, email, webhooks, and the third-party APIs your product depends on — wired in cleanly with idempotent, retry-safe handling.</p>
+      <div class="build-tags"><span class="tag">Stripe</span><span class="tag">PayPal</span><span class="tag">Google Maps</span><span class="tag">Webhooks</span><span class="tag">Cloudinary</span></div>
     </div>
     <div class="build-card">
       <div class="build-num">06</div>
-      <div class="build-title">Performance &amp; System Optimization</div>
-      <p class="build-text">Database optimization, Redis caching, API performance, reliability, debugging and architecture improvements.</p>
-      <div class="build-tags"><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">APIs</span><span class="tag">Debugging</span></div>
+      <div class="build-title">Cloud, Performance &amp; Compliance</div>
+      <p class="build-text">Faster APIs, Redis caching, Docker and AWS, CI/CD pipelines — plus GDPR-ready data handling, rate limiting, and TTL policies so the app stays up and stays compliant.</p>
+      <div class="build-tags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Redis</span><span class="tag">GDPR</span></div>
     </div>
   </div>
 </section>
@@ -863,51 +891,53 @@ a:focus-visible,.btn-black:focus-visible,.btn-ghost:focus-visible,.btn-white:foc
 
 <section id="about" class="value-section">
   <div class="s-label">About</div>
-  <h2 class="s-title">Engineering reliable systems, not just features.</h2>
+  <h2 class="s-title">I build production software — and AI that businesses can actually trust.</h2>
   <div class="about-copy">
-    <p>I'm a Senior Full-Stack Engineer with 6+ years of experience building production applications across PropTech, FinTech, GIS, eCommerce, HealthTech and AI-powered SaaS.</p>
-    <p>My strongest engineering experience is in Angular, Node.js and TypeScript, with hands-on experience across React/Next.js, MongoDB, PostgreSQL, Redis, microservices, cloud infrastructure and AI integrations.</p>
-    <p>I enjoy solving difficult engineering problems involving performance, scalability, APIs, distributed workflows, security, and maintainable architecture.</p>
-    <p class="about-meta">Based in Islamabad, Pakistan · Available for remote work worldwide.</p>
+    <p>I'm a Senior Full-Stack &amp; AI Engineer with 6+ years of shipping software that real users depend on — a PropTech platform serving 10K+ users, a FinTech backend processing 1M+ daily transactions, and AI agents clinics trust to handle patient enquiries after hours.</p>
+    <p>My stack is TypeScript end to end: NestJS and Node.js on the backend, Next.js, React, and Angular on the frontend, with MongoDB, PostgreSQL, Redis, and AWS under the hood. I own the full delivery — architecture, APIs, frontend, integrations, cloud deployment, and production support.</p>
+    <p>My latest focus is applied AI. <strong>FrontDesk AI</strong> is a multi-tenant, RAG-powered receptionist that embeds on a clinic's site with one script tag — it answers patient questions from the clinic's own knowledge base, captures consented leads, and routes emergencies to a human — with deterministic guardrails, EU AI Act disclosure, and GDPR compliance built in. <strong>AI Career Copilot</strong> is a live ATS analysis SaaS built with LangGraph, Qdrant, and Stripe. Both are production-deployed and open to inspect.</p>
+    <p>I build for longevity: clean APIs, strong types, explicit data contracts, and architecture the next engineer can read in ten minutes. If a system isn't maintainable, it isn't done.</p>
+    <p class="about-meta">Based in Islamabad, Pakistan · Open to remote roles and freelance worldwide.</p>
   </div>
 </section>
 
 <section id="hire" class="hire-section">
   <div class="s-label">Work With Me</div>
   <h2 class="s-title">Need a developer for your <em>product?</em></h2>
-  <p class="hire-lead">I help startups and businesses ship production software — Angular and Node.js applications, SaaS platforms, payments, AI features, and cloud deployment. You get a senior engineer, not a ticket-taker.</p>
+  <p class="hire-lead">I help startups and businesses ship production software — full-stack SaaS, AI agents and RAG features, payments, and cloud deployment. You get a senior engineer who owns the outcome, not a ticket-taker.</p>
   <div class="hire-layout">
     <div>
       <div class="hire-proof">
         <span class="case-chip">6+ years in production</span>
         <span class="case-chip">Live SaaS &amp; marketplaces</span>
+        <span class="case-chip">Live AI products</span>
         <span class="case-chip">Remote worldwide</span>
         <span class="case-chip">Typically replies within 24 hours</span>
       </div>
       <div class="hire-offers">
         <div class="hire-offer">
+          <h3>AI agents &amp; chatbots</h3>
+          <p>Customer-facing assistants that answer from your own data, capture leads, and hand off to a human when it matters — like FrontDesk AI.</p>
+        </div>
+        <div class="hire-offer">
+          <h3>RAG &amp; LLM features</h3>
+          <p>Vector search, grounded answers with sources, guardrails, and evals so AI features are accurate, safe, and measurable.</p>
+        </div>
+        <div class="hire-offer">
           <h3>Full-stack web apps</h3>
-          <p>Angular-first frontends with Node.js / NestJS APIs, ready for real users.</p>
+          <p>Next.js, React, or Angular frontends on Node.js / NestJS APIs, built for real users from day one.</p>
         </div>
         <div class="hire-offer">
           <h3>SaaS &amp; marketplaces</h3>
-          <p>Roles, dashboards, subscriptions, and workflows that match how you sell.</p>
+          <p>Multi-tenant architecture, roles, dashboards, subscriptions, and workflows that match how you sell.</p>
         </div>
         <div class="hire-offer">
           <h3>Payments &amp; integrations</h3>
-          <p>Stripe, PayPal, maps, auth, and the third-party APIs your product depends on.</p>
+          <p>Stripe, PayPal, maps, auth, email, and the third-party APIs your product depends on.</p>
         </div>
         <div class="hire-offer">
-          <h3>AI inside the product</h3>
-          <p>LLM features, RAG, and chat that sit on your data — not a demo chatbot.</p>
-        </div>
-        <div class="hire-offer">
-          <h3>MEAN / MERN builds</h3>
-          <p>From MVP to production: auth, APIs, admin panels, and deployment.</p>
-        </div>
-        <div class="hire-offer">
-          <h3>Performance &amp; cloud</h3>
-          <p>Faster APIs, Redis, Docker, AWS, and CI/CD so the app stays up after launch.</p>
+          <h3>Performance, cloud &amp; compliance</h3>
+          <p>Faster APIs, Redis, Docker, AWS, and CI/CD — plus GDPR-ready data handling so the app stays up and stays compliant.</p>
         </div>
       </div>
     </div>
